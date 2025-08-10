@@ -30,6 +30,6 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         ARGS: "-avz --delete"
         SOURCE: "dist/"
-        TARGET: "~/public_html/"
+        TARGET: ${{ secrets.SSH_TARGET_DIR }}
         HOST: ${{ secrets.SSH_HOST }}
         USERNAME: ${{ secrets.SSH_USERNAME }}
