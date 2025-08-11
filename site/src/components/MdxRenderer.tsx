@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { contentImports } from '@/config/content-imports';
+import StyledH1 from './ui/StyledH1';
 
 interface MdxRendererProps {
   collectionId: string;
@@ -6,50 +8,39 @@ interface MdxRendererProps {
   className?: string;
 }
 
-// Import alle MDX-filer statisk baseret på TOC.yml som SSoT
-const mdxModules = {
-  'lorem-ipsum-bog': {
-    // Baseret på toc.yml file-felter
-    '01-introduktion.mdx': () => import('@/content/lorem-ipsum-bog/01-introduktion.md'),
-    '02-klassisk-lorem.mdx': () => import('@/content/lorem-ipsum-bog/02-klassisk-lorem.md'),
-    '03-moderne-variationer.mdx': () => import('@/content/lorem-ipsum-bog/03-moderne-variationer.md'),
-    '04-teknisk-lorem.mdx': () => import('@/content/lorem-ipsum-bog/04-teknisk-lorem.md'),
-    '05-kreativ-lorem.mdx': () => import('@/content/lorem-ipsum-bog/05-kreativ-lorem.md'),
-    '06-konklusion.mdx': () => import('@/content/lorem-ipsum-bog/06-konklusion.md'),
-  }
+const mdxComponents = {
+  h1: StyledH1,
 };
+
+// Define a type for the MDX component that accepts a 'components' prop
+type MdxComponentType = React.ComponentType<{ components?: Record<string, React.ElementType> }>;
 
 export const MdxRenderer: React.FC<MdxRendererProps> = ({ 
   collectionId, 
   fileName, 
   className = "prose max-w-none" 
 }) => {
-  const [MdxComponent, setMdxComponent] = useState<React.ComponentType | null>(null);
+  const [MdxComponent, setMdxComponent] = useState<MdxComponentType | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadMdxComponent = async () => {
       setLoading(true);
-      
       try {
-        // Tjek om samlingen og filen findes i vores statiske mapping
-        const collection = mdxModules[collectionId as keyof typeof mdxModules];
+        const collection = contentImports[collectionId];
         if (!collection) {
           throw new Error(`Ukendt samling: ${collectionId}`);
         }
 
-        const moduleLoader = collection[fileName as keyof typeof collection];
+        const moduleLoader = collection[fileName];
         if (!moduleLoader) {
           throw new Error(`Ukendt fil: ${fileName} i samling ${collectionId}`);
         }
 
-        // Indlæs MDX-modulet
         const module = await moduleLoader();
         setMdxComponent(() => module.default);
       } catch (err) {
         console.error('Fejl ved indlæsning af MDX-fil:', err);
-        
-        // Fallback komponent
         setMdxComponent(() => () => (
           <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
             <h3 className="text-yellow-800 font-semibold mb-2">Indhold ikke fundet</h3>
@@ -63,50 +54,29 @@ export const MdxRenderer: React.FC<MdxRendererProps> = ({
               <summary className="text-yellow-600 text-sm cursor-pointer">Debug info</summary>
               <pre className="text-xs mt-1 bg-yellow-100 p-2 rounded">
                 Collection: {collectionId}{'\n'}
-                File: {fileName}{'\n'}
-                Available collections: {Object.keys(mdxModules).join(', ')}{'\n'}
-                Available files in collection: {collectionId in mdxModules ? Object.keys(mdxModules[collectionId as keyof typeof mdxModules]).join(', ') : 'N/A'}
+                File: {fileName}
               </pre>
             </details>
           </div>
         ));
-      } finally {
-        setLoading(false);
       }
+      setLoading(false);
     };
 
     loadMdxComponent();
   }, [collectionId, fileName]);
 
   if (loading) {
-    return (
-      <div className={className}>
-        <div className="animate-pulse">
-          <div className="h-8 bg-gray-200 rounded mb-4"></div>
-          <div className="space-y-3">
-            <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-            <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-            <div className="h-4 bg-gray-200 rounded w-5/6"></div>
-          </div>
-        </div>
-      </div>
-    );
+    return <div>Indlæser...</div>;
   }
 
   if (!MdxComponent) {
-    return (
-      <div className={className}>
-        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-          <h3 className="text-red-800 font-semibold mb-2">Indlæsningsfejl</h3>
-          <p className="text-red-700">Komponenten kunne ikke indlæses.</p>
-        </div>
-      </div>
-    );
+    return null;
   }
 
   return (
-    <div className={`${className} prose-table:border-collapse prose-table:border prose-table:border-gray-300 prose-th:border prose-th:border-gray-300 prose-th:bg-gray-100 prose-th:px-4 prose-th:py-2 prose-th:font-semibold prose-th:text-left prose-td:border prose-td:border-gray-300 prose-td:px-4 prose-td:py-2`}>
-      <MdxComponent />
+    <div className={className}>
+      <MdxComponent components={mdxComponents} />
     </div>
   );
 };
