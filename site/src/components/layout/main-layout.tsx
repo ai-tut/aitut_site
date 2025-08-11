@@ -1,32 +1,15 @@
 import * as React from "react";
 import { Header } from "./header";
 import { Sidebar } from "./sidebar";
-import { type CollectionConfig, type ModuleConfig, type ThemeConfig } from "../../types";
+import { type CollectionConfig, type ModuleConfig } from "../../types";
 
 interface MainLayoutProps {
   children: React.ReactNode;
   collections: CollectionConfig[];
   modules: ModuleConfig[];
-  theme?: ThemeConfig;
 }
 
-const generateCssVariables = (theme: ThemeConfig) => {
-  let css = ':root {\n';
-  for (const [key, value] of Object.entries(theme.colors.light)) {
-    css += `  --${key}: ${value};\n`;
-  }
-  css += '}\n';
-
-  css += '.dark {\n';
-  for (const [key, value] of Object.entries(theme.colors.dark)) {
-    css += `  --${key}: ${value};\n`;
-  }
-  css += '}\n';
-
-  return css;
-};
-
-export function MainLayout({ children, collections, modules, theme }: MainLayoutProps) {
+export function MainLayout({ children, collections, modules }: MainLayoutProps) {
   const [isDarkMode, setIsDarkMode] = React.useState(false);
 
   const toggleTheme = () => {
@@ -51,7 +34,6 @@ export function MainLayout({ children, collections, modules, theme }: MainLayout
 
   return (
     <>
-      {theme && <style>{generateCssVariables(theme)}</style>}
       <div className="min-h-screen bg-background">
         <Header onThemeToggle={toggleTheme} isDarkMode={isDarkMode} />
         <div className="flex">

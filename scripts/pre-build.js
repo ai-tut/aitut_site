@@ -208,6 +208,10 @@ export const fallbackConfig = {
  */
 function generateContentImports(collections) {
   console.log('📦 Generating content imports...');
+
+  const outputPath = path.join(projectRoot, 'site', 'src', 'config', 'content-imports.ts');
+  const outputDir = path.dirname(outputPath);
+  const contentDir = path.join(projectRoot, 'content');
   
   let content = '{\n';
 
@@ -218,7 +222,10 @@ function generateContentImports(collections) {
       
       const chapterEntries = [];
       for (const chapter of collection.tocData.chapters) {
-        const importPath = `~/content/${collection.path}/${chapter.file}`;
+        const absoluteContentPath = path.join(contentDir, collection.path, chapter.file);
+        const relativeContentPath = path.relative(outputDir, absoluteContentPath);
+        // Ensure forward slashes for JS import paths
+        const importPath = relativeContentPath.replace(/\\/g, '/');
         chapterEntries.push(`    '${chapter.file}': () => import('${importPath}')`);
       }
       collectionString += chapterEntries.join(',\n');
@@ -234,7 +241,6 @@ function generateContentImports(collections) {
 export const contentImports: Record<string, Record<string, () => Promise<any>>> = ${content};
 `;
 
-  const outputPath = path.join(projectRoot, 'site', 'src', 'config', 'content-imports.ts');
   fs.writeFileSync(outputPath, finalContent);
   console.log('✅ Content imports generated successfully.');
 }

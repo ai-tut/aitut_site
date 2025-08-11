@@ -3,7 +3,16 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "../content/**/*.{md,mdx}"
+    "../content/**/*.{md,mdx}",
+    "../packages/ui-kit/src/**/*.{js,ts,jsx,tsx}"
+  ],
+  safelist: [
+    {
+      pattern: /^(bg|text|border|ring)-(background|foreground|primary|secondary|destructive|muted|accent|popover|card)/,
+    },
+    {
+      pattern: /^(bg|text|border|ring)-(blue|yellow|red)-(100|500|900)/,
+    },
   ],
   theme: {
     container: {
