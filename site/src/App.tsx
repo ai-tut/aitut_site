@@ -256,11 +256,8 @@ const HomePage = () => (
 import { MainLayout } from './components/layout/main-layout';
 
 const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
-  const params = useParams<{ collectionId?: string }>();
-  const collection = collections.find(c => c.id === params.collectionId);
-
   return (
-    <MainLayout collections={collections} modules={modules} theme={collection?.theme}>
+    <MainLayout collections={collections} modules={modules}>
       {children}
     </MainLayout>
   );
