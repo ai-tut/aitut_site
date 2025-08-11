@@ -100,32 +100,43 @@ function generateRuntimeConfig() {
       
       // Process each collection to read and parse its TOC file
       collections = collections.map(collection => {
-        const tocPath = path.join(projectRoot, 'content', collection.path, collection.toc);
+        const collectionPath = path.join(projectRoot, 'content', collection.path);
+        const tocPath = path.join(collectionPath, collection.toc);
+        const themePath = path.join(collectionPath, 'theme.json');
         
+        let tocData = null;
         if (fs.existsSync(tocPath)) {
           try {
             const tocContent = fs.readFileSync(tocPath, 'utf8');
-            const tocData = yaml.load(tocContent);
-            
-            // Add TOC data to collection
-            return {
-              ...collection,
-              tocData: tocData,
-              pages: tocData.chapters ? tocData.chapters.map(chapter => ({
-                slug: chapter.id,
-                title: chapter.title,
-                path: chapter.file,
-                description: chapter.description
-              })) : []
-            };
+            tocData = yaml.load(tocContent);
           } catch (error) {
             console.error(`❌ Error parsing TOC file ${tocPath}:`, error.message);
-            return collection;
           }
         } else {
           console.warn(`⚠️  TOC file not found: ${tocPath}`);
-          return collection;
         }
+
+        let themeData = null;
+        if (fs.existsSync(themePath)) {
+          try {
+            const themeContent = fs.readFileSync(themePath, 'utf8');
+            themeData = JSON.parse(themeContent);
+          } catch (error) {
+            console.error(`❌ Error parsing theme file ${themePath}:`, error.message);
+          }
+        }
+
+        return {
+          ...collection,
+          tocData: tocData,
+          theme: themeData,
+          pages: tocData && tocData.chapters ? tocData.chapters.map(chapter => ({
+            slug: chapter.id,
+            title: chapter.title,
+            path: chapter.file,
+            description: chapter.description
+          })) : []
+        };
       });
       
       console.log(`📚 Found ${collections.length} content collections`);
@@ -149,6 +160,7 @@ export interface CollectionConfig {
   id: string;
   path: string;
   toc: string;
+  theme?: any;
   tocData?: {
     title: string;
     description: string;

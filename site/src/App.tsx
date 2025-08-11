@@ -253,6 +253,19 @@ const HomePage = () => (
   </div>
 );
 
+import { MainLayout } from './components/layout/main-layout';
+
+const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
+  const params = useParams<{ collectionId?: string }>();
+  const collection = collections.find(c => c.id === params.collectionId);
+
+  return (
+    <MainLayout collections={collections} modules={modules} theme={collection?.theme}>
+      {children}
+    </MainLayout>
+  );
+};
+
 function App() {
   // Hvis 'collections' er tom, er der noget galt med build-processen.
   if (!collections || collections.length === 0) {
@@ -270,23 +283,21 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-50">
-        <Suspense fallback={<div className="flex justify-center items-center h-screen">Indlæser...</div>}>
-          <Routes>
-            {/* Individuelle sider */}
-            <Route path="/:collectionId/:pageSlug" element={<CollectionPageWrapper />} />
-            
-            {/* Samlings-TOC */}
-            <Route path="/:collectionId" element={<CollectionTocWrapper />} />
-            
-            {/* Forside */}
-            <Route 
-              path="/" 
-              element={<HomePage />}
-            />
-          </Routes>
-        </Suspense>
-      </div>
+      <Suspense fallback={<div className="flex justify-center items-center h-screen">Indlæser...</div>}>
+        <Routes>
+          {/* Individuelle sider */}
+          <Route path="/:collectionId/:pageSlug" element={<LayoutWrapper><CollectionPageWrapper /></LayoutWrapper>} />
+          
+          {/* Samlings-TOC */}
+          <Route path="/:collectionId" element={<LayoutWrapper><CollectionTocWrapper /></LayoutWrapper>} />
+          
+          {/* Forside */}
+          <Route 
+            path="/" 
+            element={<LayoutWrapper><HomePage /></LayoutWrapper>}
+          />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

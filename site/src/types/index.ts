@@ -26,10 +26,41 @@ export interface TocData {
   chapters: TocChapter[];
 }
 
+export interface ThemeColors {
+  background: string;
+  foreground: string;
+  card: string;
+  "card-foreground": string;
+  popover: string;
+  "popover-foreground": string;
+  primary: string;
+  "primary-foreground": string;
+  secondary: string;
+  "secondary-foreground": string;
+  muted: string;
+  "muted-foreground": string;
+  accent: string;
+  "accent-foreground": string;
+  destructive: string;
+  "destructive-foreground": string;
+  border: string;
+  input: string;
+  ring: string;
+}
+
+export interface ThemeConfig {
+  colors: {
+    light: ThemeColors;
+    dark: ThemeColors;
+  };
+}
+
+// ... existing code ...
 export interface CollectionConfig {
   id: string;
   path: string;
   toc: string;
+  theme?: ThemeConfig;
   tocData?: TocData;
   pages?: PageConfig[];
 }

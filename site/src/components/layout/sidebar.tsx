@@ -1,26 +1,12 @@
-import * as React from "react"
-import { Link, useLocation } from "react-router-dom"
-import { cn } from "../../lib/utils"
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
-import { Badge } from "../ui/badge"
+import * as React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { cn } from "../../lib/utils";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { type CollectionConfig, type ModuleConfig } from "@/types";
 
 interface SidebarProps {
-  collections: Array<{
-    id: string
-    title: string
-    description?: string
-    pages: Array<{
-      id: string
-      title: string
-      path: string
-    }>
-  }>
-  modules: Array<{
-    id: string
-    name: string
-    version: string
-    description?: string
-  }>
+  collections: CollectionConfig[];
+  modules: ModuleConfig[];
 }
 
 export function Sidebar({ collections, modules }: SidebarProps) {
@@ -38,23 +24,23 @@ export function Sidebar({ collections, modules }: SidebarProps) {
             {collections.map((collection) => (
               <div key={collection.id} className="space-y-1">
                 <Link
-                  to={`/collection/${collection.id}`}
+                  to={`/${collection.id}`}
                   className={cn(
                     "block px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                    location.pathname === `/collection/${collection.id}`
+                    location.pathname.startsWith(`/${collection.id}`)
                       ? "bg-primary text-primary-foreground"
                       : "hover:bg-accent hover:text-accent-foreground"
                   )}
                 >
-                  {collection.title}
+                  {collection.tocData?.title || collection.id}
                 </Link>
-                {collection.pages.map((page) => (
+                {collection.pages && collection.pages.map((page) => (
                   <Link
-                    key={page.id}
-                    to={`/collection/${collection.id}/${page.id}`}
+                    key={page.slug}
+                    to={`/${collection.id}/${page.slug}`}
                     className={cn(
-                      "block px-6 py-1 text-xs text-muted-foreground hover:text-foreground transition-colors",
-                      location.pathname === `/collection/${collection.id}/${page.id}` &&
+                      "block pl-6 pr-3 py-1 text-xs text-muted-foreground hover:text-foreground transition-colors",
+                      location.pathname === `/${collection.id}/${page.slug}` &&
                         "text-primary font-medium"
                     )}
                   >
@@ -73,18 +59,10 @@ export function Sidebar({ collections, modules }: SidebarProps) {
           </CardHeader>
           <CardContent className="space-y-3">
             {modules.map((module) => (
-              <div key={module.id} className="space-y-1">
+              <div key={module.name} className="space-y-1">
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium">{module.name}</span>
-                  <Badge variant="secondary" className="text-xs">
-                    {module.version}
-                  </Badge>
                 </div>
-                {module.description && (
-                  <p className="text-xs text-muted-foreground">
-                    {module.description}
-                  </p>
-                )}
               </div>
             ))}
           </CardContent>
