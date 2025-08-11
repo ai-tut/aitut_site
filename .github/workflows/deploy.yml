@@ -22,12 +22,14 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to server via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      - name: Deploy to server via SCP
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: 195.242.130.13
+          host: 195.242.130.13
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local_path: './dist/*'
-          remote_path: '/home/cffbkvcw/aitut.eu/'
-          sftpArgs: '-o ConnectTimeout=60'
+          port: 22
+          source: "dist/*"
+          target: "/home/cffbkvcw/aitut.eu/"
+          timeout: 60s
+          command_timeout: 60s
