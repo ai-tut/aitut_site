@@ -31,5 +31,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT || 22 }}
           source: "dist/*"
-          target: "/sti/til/din/hjemmeside"
+          target: "/aitut.eu"
           strip_components: 1
