@@ -1,6 +1,6 @@
 [submodule "content/lorem-ipsum-bog"]
 	path = content/lorem-ipsum-bog
-	url = ./content/lorem-ipsum-bog
+	url = /Users/lpm/Repo/aitut_website/content/lorem-ipsum-bog
 [submodule "content/bog-ux-2025"]
 	path = content/bog-ux-2025
-	url = ./content/bog-ux-2025
+	url = /Users/lpm/Repo/aitut_website/content/bog-ux-2025

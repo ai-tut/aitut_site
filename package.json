@@ -3,6 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "workspaces": [
+    "site",
+    "content/*"
+  ],
   "scripts": {
     "prebuild": "node scripts/pre-build.js",
     "dev": "node scripts/pre-build.js && cd site && vite",
