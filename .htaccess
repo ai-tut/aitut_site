@@ -1,0 +1,7 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/cffbkvcw/aitut.eu"
+PassengerBaseURI "/"
+PassengerNodejs "/home/cffbkvcw/nodevenv/aitut.eu/22/bin/node"
+PassengerAppType node
+PassengerStartupFile app.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
