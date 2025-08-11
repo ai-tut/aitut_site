@@ -1,0 +1,27 @@
+﻿2025-08-11T09:19:25.8569896Z ##[debug]Evaluating condition for step: 'Build project'
+2025-08-11T09:19:25.8573642Z ##[debug]Evaluating: success()
+2025-08-11T09:19:25.8574737Z ##[debug]Evaluating success:
+2025-08-11T09:19:25.8576033Z ##[debug]=> true
+2025-08-11T09:19:25.8576998Z ##[debug]Result: true
+2025-08-11T09:19:25.8578558Z ##[debug]Starting: Build project
+2025-08-11T09:19:25.8592290Z ##[debug]Loading inputs
+2025-08-11T09:19:25.8594239Z ##[debug]Loading env
+2025-08-11T09:19:25.8610363Z ##[group]Run npm run build
+2025-08-11T09:19:25.8611096Z [36;1mnpm run build[0m
+2025-08-11T09:19:25.8669796Z shell: /usr/bin/bash -e {0}
+2025-08-11T09:19:25.8670568Z ##[endgroup]
+2025-08-11T09:19:25.8721578Z ##[debug]/usr/bin/bash -e /home/runner/work/_temp/4a9e978b-ba34-4aa2-8764-ffc0ae018eff.sh
+2025-08-11T09:19:25.9873612Z 
+2025-08-11T09:19:25.9874396Z > aitut_website@0.0.0 build
+2025-08-11T09:19:25.9876216Z > tsc -b && vite build
+2025-08-11T09:19:25.9876627Z 
+2025-08-11T09:19:28.0679758Z [36mvite v7.1.1 [32mbuilding for production...[36m[39m
+2025-08-11T09:19:28.4971859Z transforming...
+2025-08-11T09:19:29.5806170Z [32m✓[39m 36 modules transformed.
+2025-08-11T09:19:29.7189312Z rendering chunks...
+2025-08-11T09:19:29.7246045Z computing gzip size...
+2025-08-11T09:19:29.7333221Z [2mdist/[22m[32mindex.html                 [39m[1m[2m  0.46 kB[22m[1m[22m[2m │ gzip:  0.30 kB[22m
+2025-08-11T09:19:29.7334887Z [2mdist/[22m[2massets/[22m[35mindex-Bvgc2Eas.css  [39m[1m[2m 10.45 kB[22m[1m[22m[2m │ gzip:  2.09 kB[22m
+2025-08-11T09:19:29.7336788Z [2mdist/[22m[2massets/[22m[36mindex-hpaEsx1q.js   [39m[1m[2m216.96 kB[22m[1m[22m[2m │ gzip: 68.54 kB[22m
+2025-08-11T09:19:29.7338127Z [32m✓ built in 1.27s[39m
+2025-08-11T09:19:29.7645553Z ##[debug]Finishing: Build project

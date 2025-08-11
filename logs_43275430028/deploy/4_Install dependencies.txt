@@ -1,0 +1,21 @@
+﻿2025-08-11T09:19:20.7821227Z ##[debug]Evaluating condition for step: 'Install dependencies'
+2025-08-11T09:19:20.7825501Z ##[debug]Evaluating: success()
+2025-08-11T09:19:20.7826855Z ##[debug]Evaluating success:
+2025-08-11T09:19:20.7828675Z ##[debug]=> true
+2025-08-11T09:19:20.7830253Z ##[debug]Result: true
+2025-08-11T09:19:20.7832030Z ##[debug]Starting: Install dependencies
+2025-08-11T09:19:20.7852100Z ##[debug]Loading inputs
+2025-08-11T09:19:20.7854385Z ##[debug]Loading env
+2025-08-11T09:19:20.7878149Z ##[group]Run npm ci
+2025-08-11T09:19:20.7878921Z [36;1mnpm ci[0m
+2025-08-11T09:19:20.7957399Z shell: /usr/bin/bash -e {0}
+2025-08-11T09:19:20.7958586Z ##[endgroup]
+2025-08-11T09:19:20.8024948Z ##[debug]/usr/bin/bash -e /home/runner/work/_temp/299fe8ea-824b-40dd-aad7-9c4b5cc721f0.sh
+2025-08-11T09:19:25.8239914Z 
+2025-08-11T09:19:25.8250715Z added 226 packages, and audited 227 packages in 5s
+2025-08-11T09:19:25.8251698Z 
+2025-08-11T09:19:25.8252237Z 58 packages are looking for funding
+2025-08-11T09:19:25.8253324Z   run `npm fund` for details
+2025-08-11T09:19:25.8254673Z 
+2025-08-11T09:19:25.8255434Z found 0 vulnerabilities
+2025-08-11T09:19:25.8555135Z ##[debug]Finishing: Install dependencies

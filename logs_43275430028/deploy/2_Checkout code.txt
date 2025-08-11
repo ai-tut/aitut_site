@@ -1,0 +1,177 @@
+﻿2025-08-11T09:19:18.6815084Z ##[debug]Evaluating condition for step: 'Checkout code'
+2025-08-11T09:19:18.6854362Z ##[debug]Evaluating: success()
+2025-08-11T09:19:18.6861070Z ##[debug]Evaluating success:
+2025-08-11T09:19:18.6877928Z ##[debug]=> true
+2025-08-11T09:19:18.6885069Z ##[debug]Result: true
+2025-08-11T09:19:18.6908690Z ##[debug]Starting: Checkout code
+2025-08-11T09:19:18.6990092Z ##[debug]Register post job cleanup for action: actions/checkout@v4
+2025-08-11T09:19:18.7075361Z ##[debug]Loading inputs
+2025-08-11T09:19:18.7083720Z ##[debug]Evaluating: github.repository
+2025-08-11T09:19:18.7085334Z ##[debug]Evaluating Index:
+2025-08-11T09:19:18.7087669Z ##[debug]..Evaluating github:
+2025-08-11T09:19:18.7089558Z ##[debug]..=> Object
+2025-08-11T09:19:18.7095695Z ##[debug]..Evaluating String:
+2025-08-11T09:19:18.7096989Z ##[debug]..=> 'repository'
+2025-08-11T09:19:18.7102175Z ##[debug]=> 'ai-tut/aitut_site'
+2025-08-11T09:19:18.7104472Z ##[debug]Result: 'ai-tut/aitut_site'
+2025-08-11T09:19:18.7108696Z ##[debug]Evaluating: github.token
+2025-08-11T09:19:18.7109767Z ##[debug]Evaluating Index:
+2025-08-11T09:19:18.7110633Z ##[debug]..Evaluating github:
+2025-08-11T09:19:18.7111505Z ##[debug]..=> Object
+2025-08-11T09:19:18.7112330Z ##[debug]..Evaluating String:
+2025-08-11T09:19:18.7113196Z ##[debug]..=> 'token'
+2025-08-11T09:19:18.7114353Z ##[debug]=> '***'
+2025-08-11T09:19:18.7115332Z ##[debug]Result: '***'
+2025-08-11T09:19:18.7134174Z ##[debug]Loading env
+2025-08-11T09:19:18.7203730Z ##[group]Run actions/checkout@v4
+2025-08-11T09:19:18.7204836Z with:
+2025-08-11T09:19:18.7205627Z   repository: ai-tut/aitut_site
+2025-08-11T09:19:18.7206639Z   token: ***
+2025-08-11T09:19:18.7207406Z   ssh-strict: true
+2025-08-11T09:19:18.7208418Z   ssh-user: git
+2025-08-11T09:19:18.7209226Z   persist-credentials: true
+2025-08-11T09:19:18.7210096Z   clean: true
+2025-08-11T09:19:18.7210903Z   sparse-checkout-cone-mode: true
+2025-08-11T09:19:18.7211797Z   fetch-depth: 1
+2025-08-11T09:19:18.7212816Z   fetch-tags: false
+2025-08-11T09:19:18.7213631Z   show-progress: true
+2025-08-11T09:19:18.7214444Z   lfs: false
+2025-08-11T09:19:18.7215217Z   submodules: false
+2025-08-11T09:19:18.7216036Z   set-safe-directory: true
+2025-08-11T09:19:18.7217169Z ##[endgroup]
+2025-08-11T09:19:18.8232742Z ##[debug]GITHUB_WORKSPACE = '/home/runner/work/aitut_site/aitut_site'
+2025-08-11T09:19:18.8235307Z ##[debug]qualified repository = 'ai-tut/aitut_site'
+2025-08-11T09:19:18.8236931Z ##[debug]ref = 'refs/heads/main'
+2025-08-11T09:19:18.8238636Z ##[debug]commit = '935f5afb671f9308497de76be00d9ddbe415c7ec'
+2025-08-11T09:19:18.8240319Z ##[debug]clean = true
+2025-08-11T09:19:18.8241785Z ##[debug]filter = undefined
+2025-08-11T09:19:18.8243298Z ##[debug]fetch depth = 1
+2025-08-11T09:19:18.8245011Z ##[debug]fetch tags = false
+2025-08-11T09:19:18.8246554Z ##[debug]show progress = true
+2025-08-11T09:19:18.8248218Z ##[debug]lfs = false
+2025-08-11T09:19:18.8249704Z ##[debug]submodules = false
+2025-08-11T09:19:18.8251237Z ##[debug]recursive submodules = false
+2025-08-11T09:19:18.8252692Z ##[debug]GitHub Host URL = 
+2025-08-11T09:19:18.8254853Z ::add-matcher::/home/runner/work/_actions/actions/checkout/v4/dist/problem-matcher.json
+2025-08-11T09:19:18.8332663Z ##[debug]Added matchers: 'checkout-git'. Problem matchers scan action output for known warning or error strings and report these inline.
+2025-08-11T09:19:18.8338334Z Syncing repository: ai-tut/aitut_site
+2025-08-11T09:19:18.8340284Z ::group::Getting Git version info
+2025-08-11T09:19:18.8341972Z ##[group]Getting Git version info
+2025-08-11T09:19:18.8343169Z Working directory is '/home/runner/work/aitut_site/aitut_site'
+2025-08-11T09:19:18.8344908Z ##[debug]Getting git version
+2025-08-11T09:19:18.8345872Z [command]/usr/bin/git version
+2025-08-11T09:19:18.8352781Z git version 2.50.1
+2025-08-11T09:19:18.8375315Z ##[debug]0
+2025-08-11T09:19:18.8377444Z ##[debug]git version 2.50.1
+2025-08-11T09:19:18.8379153Z ##[debug]
+2025-08-11T09:19:18.8381719Z ##[debug]Set git useragent to: git/2.50.1 (github-actions-checkout)
+2025-08-11T09:19:18.8383903Z ::endgroup::
+2025-08-11T09:19:18.8385139Z ##[endgroup]
+2025-08-11T09:19:18.8389292Z ::add-mask::***
+2025-08-11T09:19:18.8392357Z Temporarily overriding HOME='/home/runner/work/_temp/1a0600fd-557f-46d5-a78d-acc719482ce6' before making global git config changes
+2025-08-11T09:19:18.8394302Z Adding repository directory to the temporary git global config as a safe directory
+2025-08-11T09:19:18.8404947Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/aitut_site/aitut_site
+2025-08-11T09:19:18.8433518Z ##[debug]0
+2025-08-11T09:19:18.8434981Z ##[debug]
+2025-08-11T09:19:18.8438308Z Deleting the contents of '/home/runner/work/aitut_site/aitut_site'
+2025-08-11T09:19:18.8441783Z ::group::Initializing the repository
+2025-08-11T09:19:18.8442940Z ##[group]Initializing the repository
+2025-08-11T09:19:18.8445551Z [command]/usr/bin/git init /home/runner/work/aitut_site/aitut_site
+2025-08-11T09:19:18.8508049Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-08-11T09:19:18.8510926Z hint: is subject to change. To configure the initial branch name to use in all
+2025-08-11T09:19:18.8514100Z hint: of your new repositories, which will suppress this warning, call:
+2025-08-11T09:19:18.8517320Z hint:
+2025-08-11T09:19:18.8520136Z hint: 	git config --global init.defaultBranch <name>
+2025-08-11T09:19:18.8522555Z hint:
+2025-08-11T09:19:18.8524425Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-08-11T09:19:18.8527237Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-08-11T09:19:18.8529691Z hint:
+2025-08-11T09:19:18.8531166Z hint: 	git branch -m <name>
+2025-08-11T09:19:18.8532573Z hint:
+2025-08-11T09:19:18.8534109Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-08-11T09:19:18.8535634Z Initialized empty Git repository in /home/runner/work/aitut_site/aitut_site/.git/
+2025-08-11T09:19:18.8537404Z ##[debug]0
+2025-08-11T09:19:18.8539859Z ##[debug]Initialized empty Git repository in /home/runner/work/aitut_site/aitut_site/.git/
+2025-08-11T09:19:18.8542181Z ##[debug]
+2025-08-11T09:19:18.8543882Z [command]/usr/bin/git remote add origin https://github.com/ai-tut/aitut_site
+2025-08-11T09:19:18.8560792Z ##[debug]0
+2025-08-11T09:19:18.8562744Z ##[debug]
+2025-08-11T09:19:18.8564106Z ::endgroup::
+2025-08-11T09:19:18.8565318Z ##[endgroup]
+2025-08-11T09:19:18.8567351Z ::group::Disabling automatic garbage collection
+2025-08-11T09:19:18.8568624Z ##[group]Disabling automatic garbage collection
+2025-08-11T09:19:18.8569722Z [command]/usr/bin/git config --local gc.auto 0
+2025-08-11T09:19:18.8595434Z ##[debug]0
+2025-08-11T09:19:18.8597453Z ##[debug]
+2025-08-11T09:19:18.8598960Z ::endgroup::
+2025-08-11T09:19:18.8599780Z ##[endgroup]
+2025-08-11T09:19:18.8601122Z ::group::Setting up auth
+2025-08-11T09:19:18.8602423Z ##[group]Setting up auth
+2025-08-11T09:19:18.8603631Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-08-11T09:19:18.8626680Z ##[debug]1
+2025-08-11T09:19:18.8628957Z ##[debug]
+2025-08-11T09:19:18.8631746Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-08-11T09:19:18.8902290Z ##[debug]0
+2025-08-11T09:19:18.8905677Z ##[debug]
+2025-08-11T09:19:18.8907667Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-08-11T09:19:18.8932010Z ##[debug]1
+2025-08-11T09:19:18.8934116Z ##[debug]
+2025-08-11T09:19:18.8937972Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-08-11T09:19:18.9157179Z ##[debug]0
+2025-08-11T09:19:18.9159542Z ##[debug]
+2025-08-11T09:19:18.9166176Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-08-11T09:19:18.9192809Z ##[debug]0
+2025-08-11T09:19:18.9194647Z ##[debug]
+2025-08-11T09:19:18.9208866Z ::endgroup::
+2025-08-11T09:19:18.9209898Z ##[endgroup]
+2025-08-11T09:19:18.9217673Z ::group::Fetching the repository
+2025-08-11T09:19:18.9219344Z ##[group]Fetching the repository
+2025-08-11T09:19:18.9221865Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +935f5afb671f9308497de76be00d9ddbe415c7ec:refs/remotes/origin/main
+2025-08-11T09:19:19.5895500Z From https://github.com/ai-tut/aitut_site
+2025-08-11T09:19:19.5901464Z  * [new ref]         935f5afb671f9308497de76be00d9ddbe415c7ec -> origin/main
+2025-08-11T09:19:19.5918785Z ##[debug]0
+2025-08-11T09:19:19.5922477Z ##[debug]
+2025-08-11T09:19:19.5925583Z ::endgroup::
+2025-08-11T09:19:19.5928789Z ##[endgroup]
+2025-08-11T09:19:19.5931681Z ::group::Determining the checkout info
+2025-08-11T09:19:19.5933738Z ##[group]Determining the checkout info
+2025-08-11T09:19:19.5936658Z ::endgroup::
+2025-08-11T09:19:19.5938562Z ##[endgroup]
+2025-08-11T09:19:19.5940483Z [command]/usr/bin/git sparse-checkout disable
+2025-08-11T09:19:19.5963556Z ##[debug]0
+2025-08-11T09:19:19.5968716Z ##[debug]
+2025-08-11T09:19:19.5972121Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-08-11T09:19:19.5997001Z ##[debug]0
+2025-08-11T09:19:19.6001852Z ##[debug]
+2025-08-11T09:19:19.6006024Z ::group::Checking out the ref
+2025-08-11T09:19:19.6008453Z ##[group]Checking out the ref
+2025-08-11T09:19:19.6010769Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-08-11T09:19:19.6705894Z Switched to a new branch 'main'
+2025-08-11T09:19:19.6711246Z branch 'main' set up to track 'origin/main'.
+2025-08-11T09:19:19.6719410Z ##[debug]0
+2025-08-11T09:19:19.6722209Z ##[debug]branch 'main' set up to track 'origin/main'.
+2025-08-11T09:19:19.6724205Z ##[debug]
+2025-08-11T09:19:19.6752387Z ::endgroup::
+2025-08-11T09:19:19.6754989Z ##[endgroup]
+2025-08-11T09:19:19.6764310Z ##[debug]0
+2025-08-11T09:19:19.6769354Z ##[debug]commit 935f5afb671f9308497de76be00d9ddbe415c7ec
+2025-08-11T09:19:19.6772778Z ##[debug]Author: lpm <lpmathiasen@icloud.com>
+2025-08-11T09:19:19.6775054Z ##[debug]Date:   Mon Aug 11 11:17:10 2025 +0200
+2025-08-11T09:19:19.6777045Z ##[debug]
+2025-08-11T09:19:19.6778680Z ##[debug]    commit
+2025-08-11T09:19:19.6780252Z ##[debug]
+2025-08-11T09:19:19.6782737Z [command]/usr/bin/git log -1 --format=%H
+2025-08-11T09:19:19.6796695Z 935f5afb671f9308497de76be00d9ddbe415c7ec
+2025-08-11T09:19:19.6804252Z ##[debug]0
+2025-08-11T09:19:19.6808496Z ##[debug]935f5afb671f9308497de76be00d9ddbe415c7ec
+2025-08-11T09:19:19.6811679Z ##[debug]
+2025-08-11T09:19:19.6815794Z ##[debug]Unsetting HOME override
+2025-08-11T09:19:19.6824185Z ::remove-matcher owner=checkout-git::
+2025-08-11T09:19:19.6840596Z ##[debug]Removed matchers: 'checkout-git'
+2025-08-11T09:19:19.6903968Z ##[debug]Node Action run completed with exit code 0
+2025-08-11T09:19:19.6942738Z ##[debug]Save intra-action state isPost = true
+2025-08-11T09:19:19.6945199Z ##[debug]Save intra-action state setSafeDirectory = true
+2025-08-11T09:19:19.6948609Z ##[debug]Save intra-action state repositoryPath = /home/runner/work/aitut_site/aitut_site
+2025-08-11T09:19:19.6955221Z ##[debug]Set output commit = 935f5afb671f9308497de76be00d9ddbe415c7ec
+2025-08-11T09:19:19.6958477Z ##[debug]Set output ref = refs/heads/main
+2025-08-11T09:19:19.6967198Z ##[debug]Finishing: Checkout code

@@ -1,0 +1,1131 @@
+﻿2025-08-11T09:19:17.6742441Z ##[debug]Starting: deploy
+2025-08-11T09:19:17.6783187Z ##[debug]Cleaning runner temp folder: /home/runner/work/_temp
+2025-08-11T09:19:17.6950843Z ##[debug]Starting: Set up job
+2025-08-11T09:19:17.6954121Z Current runner version: '2.327.1'
+2025-08-11T09:19:17.6989750Z ##[group]Runner Image Provisioner
+2025-08-11T09:19:17.6992095Z Hosted Compute Agent
+2025-08-11T09:19:17.6994041Z Version: 20250711.363
+2025-08-11T09:19:17.6995966Z Commit: 6785254374ce925a23743850c1cb91912ce5c14c
+2025-08-11T09:19:17.6998570Z Build Date: 2025-07-11T20:04:25Z
+2025-08-11T09:19:17.7000687Z ##[endgroup]
+2025-08-11T09:19:17.7002770Z ##[group]Operating System
+2025-08-11T09:19:17.7004746Z Ubuntu
+2025-08-11T09:19:17.7006644Z 24.04.2
+2025-08-11T09:19:17.7008750Z LTS
+2025-08-11T09:19:17.7010573Z ##[endgroup]
+2025-08-11T09:19:17.7012582Z ##[group]Runner Image
+2025-08-11T09:19:17.7014518Z Image: ubuntu-24.04
+2025-08-11T09:19:17.7016538Z Version: 20250804.2.0
+2025-08-11T09:19:17.7019825Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250804.2/images/ubuntu/Ubuntu2404-Readme.md
+2025-08-11T09:19:17.7024152Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250804.2
+2025-08-11T09:19:17.7026942Z ##[endgroup]
+2025-08-11T09:19:17.7030789Z ##[group]GITHUB_TOKEN Permissions
+2025-08-11T09:19:17.7034348Z Contents: read
+2025-08-11T09:19:17.7036297Z Metadata: read
+2025-08-11T09:19:17.7038826Z Packages: read
+2025-08-11T09:19:17.7040783Z ##[endgroup]
+2025-08-11T09:19:17.7046064Z Secret source: Actions
+2025-08-11T09:19:17.7049030Z ##[debug]Primary repository: ai-tut/aitut_site
+2025-08-11T09:19:17.7051481Z Prepare workflow directory
+2025-08-11T09:19:17.7158534Z ##[debug]Creating pipeline directory: '/home/runner/work/aitut_site'
+2025-08-11T09:19:17.7167303Z ##[debug]Creating workspace directory: '/home/runner/work/aitut_site/aitut_site'
+2025-08-11T09:19:17.7171652Z ##[debug]Update context data
+2025-08-11T09:19:17.7180777Z ##[debug]Evaluating job-level environment variables
+2025-08-11T09:19:17.7515385Z ##[debug]Evaluating job container
+2025-08-11T09:19:17.7521216Z ##[debug]Evaluating job service containers
+2025-08-11T09:19:17.7525731Z ##[debug]Evaluating job defaults
+2025-08-11T09:19:17.7564357Z Prepare all required actions
+2025-08-11T09:19:17.7624108Z Getting action download info
+2025-08-11T09:19:18.0373370Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-08-11T09:19:18.0375284Z Version: 4.2.2
+2025-08-11T09:19:18.0377034Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-08-11T09:19:18.0379450Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-08-11T09:19:18.0456252Z ##[endgroup]
+2025-08-11T09:19:18.2071183Z ##[debug]Copied action archive '/opt/actionarchivecache/actions_checkout/11bd71901bbe5b1630ceea73d27597364c9af683.tar.gz' to '/home/runner/work/_actions/_temp_301eef8f-920a-4420-8656-09540d576c8c/5ffa095e-6f27-4264-88b1-a0a0c3c75fa2.tar.gz'
+2025-08-11T09:19:18.2577630Z ##[debug]Unwrap 'actions-checkout-11bd719' to '/home/runner/work/_actions/actions/checkout/v4'
+2025-08-11T09:19:18.2711664Z ##[debug]Archive '/home/runner/work/_actions/_temp_301eef8f-920a-4420-8656-09540d576c8c/5ffa095e-6f27-4264-88b1-a0a0c3c75fa2.tar.gz' has been unzipped into '/home/runner/work/_actions/actions/checkout/v4'.
+2025-08-11T09:19:18.2814236Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-08-11T09:19:18.2815705Z Version: 4.4.0
+2025-08-11T09:19:18.2817094Z Digest: sha256:9427cefe82346e992fb5b949e3569b39d537ae41aa3086483b14eceebfc16bc1
+2025-08-11T09:19:18.2819064Z Source commit SHA: 49933ea5288caeca8642d1e84afbd3f7d6820020
+2025-08-11T09:19:18.2820447Z ##[endgroup]
+2025-08-11T09:19:18.2862845Z ##[debug]Copied action archive '/opt/actionarchivecache/actions_setup-node/49933ea5288caeca8642d1e84afbd3f7d6820020.tar.gz' to '/home/runner/work/_actions/_temp_ea41c121-bc38-4665-b178-1da15d37f62f/984f22f6-0b1e-4661-b9d2-1a62e48d47e7.tar.gz'
+2025-08-11T09:19:18.3448313Z ##[debug]Unwrap 'actions-setup-node-49933ea' to '/home/runner/work/_actions/actions/setup-node/v4'
+2025-08-11T09:19:18.3704215Z ##[debug]Archive '/home/runner/work/_actions/_temp_ea41c121-bc38-4665-b178-1da15d37f62f/984f22f6-0b1e-4661-b9d2-1a62e48d47e7.tar.gz' has been unzipped into '/home/runner/work/_actions/actions/setup-node/v4'.
+2025-08-11T09:19:18.3749896Z Download action repository 'appleboy/scp-action@master' (SHA:7f18bf0ec86d81d9fba5e2bdf3253b7b22a604ab)
+2025-08-11T09:19:18.5181161Z ##[debug]Download 'https://api.github.com/repos/appleboy/scp-action/tarball/7f18bf0ec86d81d9fba5e2bdf3253b7b22a604ab' to '/home/runner/work/_actions/_temp_0c0775ff-99bf-46db-87c8-e34098ff246d/d2cbaf14-d5a4-4af4-be10-8409a39c2b0f.tar.gz'
+2025-08-11T09:19:18.5268714Z ##[debug]Unwrap 'appleboy-scp-action-7f18bf0' to '/home/runner/work/_actions/appleboy/scp-action/master'
+2025-08-11T09:19:18.5291548Z ##[debug]Archive '/home/runner/work/_actions/_temp_0c0775ff-99bf-46db-87c8-e34098ff246d/d2cbaf14-d5a4-4af4-be10-8409a39c2b0f.tar.gz' has been unzipped into '/home/runner/work/_actions/appleboy/scp-action/master'.
+2025-08-11T09:19:18.5317196Z ##[debug]action.yml for action: '/home/runner/work/_actions/actions/checkout/v4/action.yml'.
+2025-08-11T09:19:18.5905434Z ##[debug]action.yml for action: '/home/runner/work/_actions/actions/setup-node/v4/action.yml'.
+2025-08-11T09:19:18.5974233Z ##[debug]action.yml for action: '/home/runner/work/_actions/appleboy/scp-action/master/action.yml'.
+2025-08-11T09:19:18.6363230Z ##[debug]Set step '__actions_checkout' display name to: 'Checkout code'
+2025-08-11T09:19:18.6367053Z ##[debug]Set step '__actions_setup-node' display name to: 'Set up Node.js'
+2025-08-11T09:19:18.6370054Z ##[debug]Set step '__run' display name to: 'Install dependencies'
+2025-08-11T09:19:18.6372835Z ##[debug]Set step '__run_2' display name to: 'Build project'
+2025-08-11T09:19:18.6375707Z ##[debug]Set step '__appleboy_scp-action' display name to: 'Deploy to server via SCP'
+2025-08-11T09:19:18.6377045Z Complete job name: deploy
+2025-08-11T09:19:18.6415016Z ##[debug]Collect running processes for tracking orphan processes.
+2025-08-11T09:19:18.6629166Z ##[debug]Finishing: Set up job
+2025-08-11T09:19:18.6815104Z ##[debug]Evaluating condition for step: 'Checkout code'
+2025-08-11T09:19:18.6854374Z ##[debug]Evaluating: success()
+2025-08-11T09:19:18.6861090Z ##[debug]Evaluating success:
+2025-08-11T09:19:18.6877949Z ##[debug]=> true
+2025-08-11T09:19:18.6885081Z ##[debug]Result: true
+2025-08-11T09:19:18.6908702Z ##[debug]Starting: Checkout code
+2025-08-11T09:19:18.6990103Z ##[debug]Register post job cleanup for action: actions/checkout@v4
+2025-08-11T09:19:18.7075381Z ##[debug]Loading inputs
+2025-08-11T09:19:18.7083739Z ##[debug]Evaluating: github.repository
+2025-08-11T09:19:18.7085347Z ##[debug]Evaluating Index:
+2025-08-11T09:19:18.7087686Z ##[debug]..Evaluating github:
+2025-08-11T09:19:18.7089574Z ##[debug]..=> Object
+2025-08-11T09:19:18.7095712Z ##[debug]..Evaluating String:
+2025-08-11T09:19:18.7096998Z ##[debug]..=> 'repository'
+2025-08-11T09:19:18.7102192Z ##[debug]=> 'ai-tut/aitut_site'
+2025-08-11T09:19:18.7104489Z ##[debug]Result: 'ai-tut/aitut_site'
+2025-08-11T09:19:18.7108836Z ##[debug]Evaluating: github.token
+2025-08-11T09:19:18.7109771Z ##[debug]Evaluating Index:
+2025-08-11T09:19:18.7110637Z ##[debug]..Evaluating github:
+2025-08-11T09:19:18.7111509Z ##[debug]..=> Object
+2025-08-11T09:19:18.7112333Z ##[debug]..Evaluating String:
+2025-08-11T09:19:18.7113199Z ##[debug]..=> 'token'
+2025-08-11T09:19:18.7114357Z ##[debug]=> '***'
+2025-08-11T09:19:18.7115336Z ##[debug]Result: '***'
+2025-08-11T09:19:18.7134183Z ##[debug]Loading env
+2025-08-11T09:19:18.7203752Z ##[group]Run actions/checkout@v4
+2025-08-11T09:19:18.7204844Z with:
+2025-08-11T09:19:18.7205631Z   repository: ai-tut/aitut_site
+2025-08-11T09:19:18.7206643Z   token: ***
+2025-08-11T09:19:18.7207409Z   ssh-strict: true
+2025-08-11T09:19:18.7208423Z   ssh-user: git
+2025-08-11T09:19:18.7209230Z   persist-credentials: true
+2025-08-11T09:19:18.7210099Z   clean: true
+2025-08-11T09:19:18.7210907Z   sparse-checkout-cone-mode: true
+2025-08-11T09:19:18.7211800Z   fetch-depth: 1
+2025-08-11T09:19:18.7212820Z   fetch-tags: false
+2025-08-11T09:19:18.7213641Z   show-progress: true
+2025-08-11T09:19:18.7214447Z   lfs: false
+2025-08-11T09:19:18.7215220Z   submodules: false
+2025-08-11T09:19:18.7216039Z   set-safe-directory: true
+2025-08-11T09:19:18.7217176Z ##[endgroup]
+2025-08-11T09:19:18.8232823Z ##[debug]GITHUB_WORKSPACE = '/home/runner/work/aitut_site/aitut_site'
+2025-08-11T09:19:18.8235317Z ##[debug]qualified repository = 'ai-tut/aitut_site'
+2025-08-11T09:19:18.8236935Z ##[debug]ref = 'refs/heads/main'
+2025-08-11T09:19:18.8238642Z ##[debug]commit = '935f5afb671f9308497de76be00d9ddbe415c7ec'
+2025-08-11T09:19:18.8240322Z ##[debug]clean = true
+2025-08-11T09:19:18.8241789Z ##[debug]filter = undefined
+2025-08-11T09:19:18.8243301Z ##[debug]fetch depth = 1
+2025-08-11T09:19:18.8245019Z ##[debug]fetch tags = false
+2025-08-11T09:19:18.8246558Z ##[debug]show progress = true
+2025-08-11T09:19:18.8248222Z ##[debug]lfs = false
+2025-08-11T09:19:18.8249708Z ##[debug]submodules = false
+2025-08-11T09:19:18.8251247Z ##[debug]recursive submodules = false
+2025-08-11T09:19:18.8252709Z ##[debug]GitHub Host URL = 
+2025-08-11T09:19:18.8254861Z ::add-matcher::/home/runner/work/_actions/actions/checkout/v4/dist/problem-matcher.json
+2025-08-11T09:19:18.8332687Z ##[debug]Added matchers: 'checkout-git'. Problem matchers scan action output for known warning or error strings and report these inline.
+2025-08-11T09:19:18.8338356Z Syncing repository: ai-tut/aitut_site
+2025-08-11T09:19:18.8340294Z ::group::Getting Git version info
+2025-08-11T09:19:18.8341985Z ##[group]Getting Git version info
+2025-08-11T09:19:18.8343173Z Working directory is '/home/runner/work/aitut_site/aitut_site'
+2025-08-11T09:19:18.8344913Z ##[debug]Getting git version
+2025-08-11T09:19:18.8345875Z [command]/usr/bin/git version
+2025-08-11T09:19:18.8352802Z git version 2.50.1
+2025-08-11T09:19:18.8375328Z ##[debug]0
+2025-08-11T09:19:18.8377455Z ##[debug]git version 2.50.1
+2025-08-11T09:19:18.8379161Z ##[debug]
+2025-08-11T09:19:18.8381726Z ##[debug]Set git useragent to: git/2.50.1 (github-actions-checkout)
+2025-08-11T09:19:18.8384185Z ::endgroup::
+2025-08-11T09:19:18.8385143Z ##[endgroup]
+2025-08-11T09:19:18.8389313Z ::add-mask::***
+2025-08-11T09:19:18.8392378Z Temporarily overriding HOME='/home/runner/work/_temp/1a0600fd-557f-46d5-a78d-acc719482ce6' before making global git config changes
+2025-08-11T09:19:18.8394306Z Adding repository directory to the temporary git global config as a safe directory
+2025-08-11T09:19:18.8404967Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/aitut_site/aitut_site
+2025-08-11T09:19:18.8433538Z ##[debug]0
+2025-08-11T09:19:18.8434986Z ##[debug]
+2025-08-11T09:19:18.8438329Z Deleting the contents of '/home/runner/work/aitut_site/aitut_site'
+2025-08-11T09:19:18.8441801Z ::group::Initializing the repository
+2025-08-11T09:19:18.8442943Z ##[group]Initializing the repository
+2025-08-11T09:19:18.8445572Z [command]/usr/bin/git init /home/runner/work/aitut_site/aitut_site
+2025-08-11T09:19:18.8508078Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-08-11T09:19:18.8510958Z hint: is subject to change. To configure the initial branch name to use in all
+2025-08-11T09:19:18.8514123Z hint: of your new repositories, which will suppress this warning, call:
+2025-08-11T09:19:18.8517345Z hint:
+2025-08-11T09:19:18.8520160Z hint: 	git config --global init.defaultBranch <name>
+2025-08-11T09:19:18.8522567Z hint:
+2025-08-11T09:19:18.8524449Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-08-11T09:19:18.8527258Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-08-11T09:19:18.8529709Z hint:
+2025-08-11T09:19:18.8531173Z hint: 	git branch -m <name>
+2025-08-11T09:19:18.8532580Z hint:
+2025-08-11T09:19:18.8534118Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-08-11T09:19:18.8535638Z Initialized empty Git repository in /home/runner/work/aitut_site/aitut_site/.git/
+2025-08-11T09:19:18.8537408Z ##[debug]0
+2025-08-11T09:19:18.8539893Z ##[debug]Initialized empty Git repository in /home/runner/work/aitut_site/aitut_site/.git/
+2025-08-11T09:19:18.8542197Z ##[debug]
+2025-08-11T09:19:18.8543898Z [command]/usr/bin/git remote add origin https://github.com/ai-tut/aitut_site
+2025-08-11T09:19:18.8560812Z ##[debug]0
+2025-08-11T09:19:18.8562750Z ##[debug]
+2025-08-11T09:19:18.8564113Z ::endgroup::
+2025-08-11T09:19:18.8565325Z ##[endgroup]
+2025-08-11T09:19:18.8567358Z ::group::Disabling automatic garbage collection
+2025-08-11T09:19:18.8568636Z ##[group]Disabling automatic garbage collection
+2025-08-11T09:19:18.8569726Z [command]/usr/bin/git config --local gc.auto 0
+2025-08-11T09:19:18.8595447Z ##[debug]0
+2025-08-11T09:19:18.8597458Z ##[debug]
+2025-08-11T09:19:18.8598965Z ::endgroup::
+2025-08-11T09:19:18.8599783Z ##[endgroup]
+2025-08-11T09:19:18.8601128Z ::group::Setting up auth
+2025-08-11T09:19:18.8602427Z ##[group]Setting up auth
+2025-08-11T09:19:18.8603635Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-08-11T09:19:18.8626701Z ##[debug]1
+2025-08-11T09:19:18.8628979Z ##[debug]
+2025-08-11T09:19:18.8631756Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-08-11T09:19:18.8902312Z ##[debug]0
+2025-08-11T09:19:18.8905686Z ##[debug]
+2025-08-11T09:19:18.8907673Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-08-11T09:19:18.8932024Z ##[debug]1
+2025-08-11T09:19:18.8934125Z ##[debug]
+2025-08-11T09:19:18.8937981Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-08-11T09:19:18.9157201Z ##[debug]0
+2025-08-11T09:19:18.9159548Z ##[debug]
+2025-08-11T09:19:18.9166192Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-08-11T09:19:18.9192831Z ##[debug]0
+2025-08-11T09:19:18.9194871Z ##[debug]
+2025-08-11T09:19:18.9208886Z ::endgroup::
+2025-08-11T09:19:18.9209902Z ##[endgroup]
+2025-08-11T09:19:18.9217685Z ::group::Fetching the repository
+2025-08-11T09:19:18.9219356Z ##[group]Fetching the repository
+2025-08-11T09:19:18.9221873Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +935f5afb671f9308497de76be00d9ddbe415c7ec:refs/remotes/origin/main
+2025-08-11T09:19:19.5895615Z From https://github.com/ai-tut/aitut_site
+2025-08-11T09:19:19.5901496Z  * [new ref]         935f5afb671f9308497de76be00d9ddbe415c7ec -> origin/main
+2025-08-11T09:19:19.5918815Z ##[debug]0
+2025-08-11T09:19:19.5922487Z ##[debug]
+2025-08-11T09:19:19.5925603Z ::endgroup::
+2025-08-11T09:19:19.5928807Z ##[endgroup]
+2025-08-11T09:19:19.5931688Z ::group::Determining the checkout info
+2025-08-11T09:19:19.5933749Z ##[group]Determining the checkout info
+2025-08-11T09:19:19.5936663Z ::endgroup::
+2025-08-11T09:19:19.5938579Z ##[endgroup]
+2025-08-11T09:19:19.5940511Z [command]/usr/bin/git sparse-checkout disable
+2025-08-11T09:19:19.5963588Z ##[debug]0
+2025-08-11T09:19:19.5968749Z ##[debug]
+2025-08-11T09:19:19.5972169Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-08-11T09:19:19.5997050Z ##[debug]0
+2025-08-11T09:19:19.6001884Z ##[debug]
+2025-08-11T09:19:19.6006043Z ::group::Checking out the ref
+2025-08-11T09:19:19.6008471Z ##[group]Checking out the ref
+2025-08-11T09:19:19.6010784Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-08-11T09:19:19.6705958Z Switched to a new branch 'main'
+2025-08-11T09:19:19.6711284Z branch 'main' set up to track 'origin/main'.
+2025-08-11T09:19:19.6719435Z ##[debug]0
+2025-08-11T09:19:19.6722217Z ##[debug]branch 'main' set up to track 'origin/main'.
+2025-08-11T09:19:19.6724209Z ##[debug]
+2025-08-11T09:19:19.6752419Z ::endgroup::
+2025-08-11T09:19:19.6755022Z ##[endgroup]
+2025-08-11T09:19:19.6764344Z ##[debug]0
+2025-08-11T09:19:19.6769412Z ##[debug]commit 935f5afb671f9308497de76be00d9ddbe415c7ec
+2025-08-11T09:19:19.6772792Z ##[debug]Author: lpm <lpmathiasen@icloud.com>
+2025-08-11T09:19:19.6775061Z ##[debug]Date:   Mon Aug 11 11:17:10 2025 +0200
+2025-08-11T09:19:19.6777050Z ##[debug]
+2025-08-11T09:19:19.6778687Z ##[debug]    commit
+2025-08-11T09:19:19.6780263Z ##[debug]
+2025-08-11T09:19:19.6782762Z [command]/usr/bin/git log -1 --format=%H
+2025-08-11T09:19:19.6796723Z 935f5afb671f9308497de76be00d9ddbe415c7ec
+2025-08-11T09:19:19.6804283Z ##[debug]0
+2025-08-11T09:19:19.6808530Z ##[debug]935f5afb671f9308497de76be00d9ddbe415c7ec
+2025-08-11T09:19:19.6811708Z ##[debug]
+2025-08-11T09:19:19.6815825Z ##[debug]Unsetting HOME override
+2025-08-11T09:19:19.6824220Z ::remove-matcher owner=checkout-git::
+2025-08-11T09:19:19.6840628Z ##[debug]Removed matchers: 'checkout-git'
+2025-08-11T09:19:19.6903999Z ##[debug]Node Action run completed with exit code 0
+2025-08-11T09:19:19.6942766Z ##[debug]Save intra-action state isPost = true
+2025-08-11T09:19:19.6945243Z ##[debug]Save intra-action state setSafeDirectory = true
+2025-08-11T09:19:19.6948619Z ##[debug]Save intra-action state repositoryPath = /home/runner/work/aitut_site/aitut_site
+2025-08-11T09:19:19.6955249Z ##[debug]Set output commit = 935f5afb671f9308497de76be00d9ddbe415c7ec
+2025-08-11T09:19:19.6958497Z ##[debug]Set output ref = refs/heads/main
+2025-08-11T09:19:19.6967215Z ##[debug]Finishing: Checkout code
+2025-08-11T09:19:19.7000321Z ##[debug]Evaluating condition for step: 'Set up Node.js'
+2025-08-11T09:19:19.7005307Z ##[debug]Evaluating: success()
+2025-08-11T09:19:19.7008061Z ##[debug]Evaluating success:
+2025-08-11T09:19:19.7010663Z ##[debug]=> true
+2025-08-11T09:19:19.7013078Z ##[debug]Result: true
+2025-08-11T09:19:19.7016074Z ##[debug]Starting: Set up Node.js
+2025-08-11T09:19:19.7085845Z ##[debug]Register post job cleanup for action: actions/setup-node@v4
+2025-08-11T09:19:19.7122747Z ##[debug]Loading inputs
+2025-08-11T09:19:19.7157701Z ##[debug]Evaluating: (((github.server_url == 'https://github.com') && github.token) || '')
+2025-08-11T09:19:19.7160604Z ##[debug]Evaluating Or:
+2025-08-11T09:19:19.7163811Z ##[debug]..Evaluating And:
+2025-08-11T09:19:19.7167003Z ##[debug]....Evaluating Equal:
+2025-08-11T09:19:19.7169718Z ##[debug]......Evaluating Index:
+2025-08-11T09:19:19.7171498Z ##[debug]........Evaluating github:
+2025-08-11T09:19:19.7173236Z ##[debug]........=> Object
+2025-08-11T09:19:19.7174876Z ##[debug]........Evaluating String:
+2025-08-11T09:19:19.7176543Z ##[debug]........=> 'server_url'
+2025-08-11T09:19:19.7178467Z ##[debug]......=> 'https://github.com'
+2025-08-11T09:19:19.7180242Z ##[debug]......Evaluating String:
+2025-08-11T09:19:19.7182029Z ##[debug]......=> 'https://github.com'
+2025-08-11T09:19:19.7188306Z ##[debug]....=> true
+2025-08-11T09:19:19.7190654Z ##[debug]....Evaluating Index:
+2025-08-11T09:19:19.7192687Z ##[debug]......Evaluating github:
+2025-08-11T09:19:19.7194802Z ##[debug]......=> Object
+2025-08-11T09:19:19.7196543Z ##[debug]......Evaluating String:
+2025-08-11T09:19:19.7198485Z ##[debug]......=> 'token'
+2025-08-11T09:19:19.7200733Z ##[debug]....=> '***'
+2025-08-11T09:19:19.7203141Z ##[debug]..=> '***'
+2025-08-11T09:19:19.7205215Z ##[debug]=> '***'
+2025-08-11T09:19:19.7212660Z ##[debug]Expanded: ((('https://github.com' == 'https://github.com') && '***') || '')
+2025-08-11T09:19:19.7215401Z ##[debug]Result: '***'
+2025-08-11T09:19:19.7223527Z ##[debug]Loading env
+2025-08-11T09:19:19.7245074Z ##[group]Run actions/setup-node@v4
+2025-08-11T09:19:19.7246763Z with:
+2025-08-11T09:19:19.7248269Z   node-version: 20
+2025-08-11T09:19:19.7249711Z   cache: npm
+2025-08-11T09:19:19.7251092Z   always-auth: false
+2025-08-11T09:19:19.7252572Z   check-latest: false
+2025-08-11T09:19:19.7254325Z   token: ***
+2025-08-11T09:19:19.7255681Z ##[endgroup]
+2025-08-11T09:19:19.9019636Z ##[debug]isExplicit: 
+2025-08-11T09:19:19.9024138Z ##[debug]explicit? false
+2025-08-11T09:19:19.9031956Z ##[debug]isExplicit: 18.20.8
+2025-08-11T09:19:19.9035708Z ##[debug]explicit? true
+2025-08-11T09:19:19.9042290Z ##[debug]isExplicit: 20.19.4
+2025-08-11T09:19:19.9045591Z ##[debug]explicit? true
+2025-08-11T09:19:19.9049565Z ##[debug]isExplicit: 22.18.0
+2025-08-11T09:19:19.9052825Z ##[debug]explicit? true
+2025-08-11T09:19:19.9056090Z ##[debug]evaluating 3 versions
+2025-08-11T09:19:19.9079515Z ##[debug]matched: 20.19.4
+2025-08-11T09:19:19.9082624Z ##[debug]checking cache: /opt/hostedtoolcache/node/20.19.4/x64
+2025-08-11T09:19:19.9086421Z ##[debug]Found tool in cache node 20.19.4 x64
+2025-08-11T09:19:19.9089159Z Found in cache @ /opt/hostedtoolcache/node/20.19.4/x64
+2025-08-11T09:19:19.9093313Z ::group::Environment details
+2025-08-11T09:19:19.9096541Z ##[group]Environment details
+2025-08-11T09:19:20.3308929Z node: v20.19.4
+2025-08-11T09:19:20.3310642Z npm: 10.8.2
+2025-08-11T09:19:20.3312282Z yarn: 1.22.22
+2025-08-11T09:19:20.3315241Z ::endgroup::
+2025-08-11T09:19:20.3316929Z ##[endgroup]
+2025-08-11T09:19:20.3335913Z [command]/opt/hostedtoolcache/node/20.19.4/x64/bin/npm config get cache
+2025-08-11T09:19:20.6459761Z /home/runner/.npm
+2025-08-11T09:19:20.6539236Z ##[debug]npm's cache folder "/home/runner/.npm" configured for the root directory
+2025-08-11T09:19:20.6545776Z ##[debug]followSymbolicLinks 'true'
+2025-08-11T09:19:20.6574198Z ##[debug]followSymbolicLinks 'true'
+2025-08-11T09:19:20.6576947Z ##[debug]implicitDescendants 'true'
+2025-08-11T09:19:20.6579819Z ##[debug]matchDirectories 'true'
+2025-08-11T09:19:20.6582807Z ##[debug]omitBrokenSymbolicLinks 'true'
+2025-08-11T09:19:20.6585489Z ##[debug]excludeHiddenFiles 'false'
+2025-08-11T09:19:20.6588318Z ##[debug]Search path '/home/runner/work/aitut_site/aitut_site/package-lock.json'
+2025-08-11T09:19:20.6591287Z ##[debug]/home/runner/work/aitut_site/aitut_site/package-lock.json
+2025-08-11T09:19:20.6642859Z ##[debug]Found 1 files to hash.
+2025-08-11T09:19:20.6645666Z ##[debug]primary key is node-cache-Linux-x64-npm-f2281553f538d2e66b86afd01e4052b272ee335b21261bbebd45c82cbb5d2a43
+2025-08-11T09:19:20.6648967Z ##[debug]Cache service version: v2
+2025-08-11T09:19:20.6651235Z ##[debug]Resolved Keys:
+2025-08-11T09:19:20.6653973Z ##[debug]["node-cache-Linux-x64-npm-f2281553f538d2e66b86afd01e4052b272ee335b21261bbebd45c82cbb5d2a43"]
+2025-08-11T09:19:20.6656798Z ##[debug]Checking zstd --quiet --version
+2025-08-11T09:19:20.6716908Z ##[debug]1.5.7
+2025-08-11T09:19:20.6721279Z ##[debug]zstd version: 1.5.7
+2025-08-11T09:19:20.6730850Z ##[debug][Request] GetCacheEntryDownloadURL https://results-receiver.actions.githubusercontent.com/twirp/github.actions.results.api.v1.CacheService/GetCacheEntryDownloadURL
+2025-08-11T09:19:20.7655951Z ##[debug][Response] - 200
+2025-08-11T09:19:20.7659170Z ##[debug]Headers: {
+2025-08-11T09:19:20.7660984Z ##[debug]  "content-length": "54",
+2025-08-11T09:19:20.7662959Z ##[debug]  "content-type": "application/json",
+2025-08-11T09:19:20.7664980Z ##[debug]  "date": "Mon, 11 Aug 2025 09:19:20 GMT",
+2025-08-11T09:19:20.7666912Z ##[debug]  "x-github-backend": "Kubernetes",
+2025-08-11T09:19:20.7668684Z ##[debug]  "x-github-request-id": "F402:13B400:AC882E:CE7094:6899B598"
+2025-08-11T09:19:20.7670501Z ##[debug]}
+2025-08-11T09:19:20.7672729Z ##[debug]Body: {
+2025-08-11T09:19:20.7674143Z ##[debug]  "ok": false,
+2025-08-11T09:19:20.7675589Z ##[debug]  "signed_download_url": "",
+2025-08-11T09:19:20.7676755Z ##[debug]  "matched_key": ""
+2025-08-11T09:19:20.7677545Z ##[debug]}
+2025-08-11T09:19:20.7679757Z ##[debug]Cache not found for version 04d00cc68e25ee34fd8b04095d0a46a28244d98af53e6925e47ed311d487b1d6 of keys: node-cache-Linux-x64-npm-f2281553f538d2e66b86afd01e4052b272ee335b21261bbebd45c82cbb5d2a43
+2025-08-11T09:19:20.7681328Z npm cache is not found
+2025-08-11T09:19:20.7688967Z ##[add-matcher]/home/runner/work/_actions/actions/setup-node/v4/.github/tsc.json
+2025-08-11T09:19:20.7718160Z ##[debug]Added matchers: 'tsc'. Problem matchers scan action output for known warning or error strings and report these inline.
+2025-08-11T09:19:20.7721197Z ##[add-matcher]/home/runner/work/_actions/actions/setup-node/v4/.github/eslint-stylish.json
+2025-08-11T09:19:20.7734385Z ##[debug]Added matchers: 'eslint-stylish'. Problem matchers scan action output for known warning or error strings and report these inline.
+2025-08-11T09:19:20.7737448Z ##[add-matcher]/home/runner/work/_actions/actions/setup-node/v4/.github/eslint-compact.json
+2025-08-11T09:19:20.7743190Z ##[debug]Added matchers: 'eslint-compact'. Problem matchers scan action output for known warning or error strings and report these inline.
+2025-08-11T09:19:20.7793423Z ##[debug]Node Action run completed with exit code 0
+2025-08-11T09:19:20.7799040Z ##[debug]Save intra-action state SETUP_NODE_CACHE_PACKAGE_MANAGER = npm
+2025-08-11T09:19:20.7800401Z ##[debug]Save intra-action state CACHE_PATHS = ["/home/runner/.npm"]
+2025-08-11T09:19:20.7802118Z ##[debug]Save intra-action state CACHE_KEY = node-cache-Linux-x64-npm-f2281553f538d2e66b86afd01e4052b272ee335b21261bbebd45c82cbb5d2a43
+2025-08-11T09:19:20.7804096Z ##[debug]Set output node-version = v20.19.4
+2025-08-11T09:19:20.7805143Z ##[debug]Set output cache-hit = false
+2025-08-11T09:19:20.7807096Z ##[debug]Finishing: Set up Node.js
+2025-08-11T09:19:20.7821242Z ##[debug]Evaluating condition for step: 'Install dependencies'
+2025-08-11T09:19:20.7825511Z ##[debug]Evaluating: success()
+2025-08-11T09:19:20.7826860Z ##[debug]Evaluating success:
+2025-08-11T09:19:20.7828682Z ##[debug]=> true
+2025-08-11T09:19:20.7830258Z ##[debug]Result: true
+2025-08-11T09:19:20.7832037Z ##[debug]Starting: Install dependencies
+2025-08-11T09:19:20.7852114Z ##[debug]Loading inputs
+2025-08-11T09:19:20.7854394Z ##[debug]Loading env
+2025-08-11T09:19:20.7878167Z ##[group]Run npm ci
+2025-08-11T09:19:20.7878925Z [36;1mnpm ci[0m
+2025-08-11T09:19:20.7957415Z shell: /usr/bin/bash -e {0}
+2025-08-11T09:19:20.7958592Z ##[endgroup]
+2025-08-11T09:19:20.8024963Z ##[debug]/usr/bin/bash -e /home/runner/work/_temp/299fe8ea-824b-40dd-aad7-9c4b5cc721f0.sh
+2025-08-11T09:19:25.8239986Z 
+2025-08-11T09:19:25.8250734Z added 226 packages, and audited 227 packages in 5s
+2025-08-11T09:19:25.8251708Z 
+2025-08-11T09:19:25.8252246Z 58 packages are looking for funding
+2025-08-11T09:19:25.8253431Z   run `npm fund` for details
+2025-08-11T09:19:25.8254686Z 
+2025-08-11T09:19:25.8255445Z found 0 vulnerabilities
+2025-08-11T09:19:25.8555146Z ##[debug]Finishing: Install dependencies
+2025-08-11T09:19:25.8569905Z ##[debug]Evaluating condition for step: 'Build project'
+2025-08-11T09:19:25.8573664Z ##[debug]Evaluating: success()
+2025-08-11T09:19:25.8574742Z ##[debug]Evaluating success:
+2025-08-11T09:19:25.8576037Z ##[debug]=> true
+2025-08-11T09:19:25.8577001Z ##[debug]Result: true
+2025-08-11T09:19:25.8578564Z ##[debug]Starting: Build project
+2025-08-11T09:19:25.8592300Z ##[debug]Loading inputs
+2025-08-11T09:19:25.8594244Z ##[debug]Loading env
+2025-08-11T09:19:25.8610372Z ##[group]Run npm run build
+2025-08-11T09:19:25.8611100Z [36;1mnpm run build[0m
+2025-08-11T09:19:25.8669804Z shell: /usr/bin/bash -e {0}
+2025-08-11T09:19:25.8670572Z ##[endgroup]
+2025-08-11T09:19:25.8721588Z ##[debug]/usr/bin/bash -e /home/runner/work/_temp/4a9e978b-ba34-4aa2-8764-ffc0ae018eff.sh
+2025-08-11T09:19:25.9873639Z 
+2025-08-11T09:19:25.9874409Z > aitut_website@0.0.0 build
+2025-08-11T09:19:25.9876224Z > tsc -b && vite build
+2025-08-11T09:19:25.9876632Z 
+2025-08-11T09:19:28.0679904Z [36mvite v7.1.1 [32mbuilding for production...[36m[39m
+2025-08-11T09:19:28.4971903Z transforming...
+2025-08-11T09:19:29.5806215Z [32m✓[39m 36 modules transformed.
+2025-08-11T09:19:29.7189355Z rendering chunks...
+2025-08-11T09:19:29.7246056Z computing gzip size...
+2025-08-11T09:19:29.7333231Z [2mdist/[22m[32mindex.html                 [39m[1m[2m  0.46 kB[22m[1m[22m[2m │ gzip:  0.30 kB[22m
+2025-08-11T09:19:29.7334894Z [2mdist/[22m[2massets/[22m[35mindex-Bvgc2Eas.css  [39m[1m[2m 10.45 kB[22m[1m[22m[2m │ gzip:  2.09 kB[22m
+2025-08-11T09:19:29.7336793Z [2mdist/[22m[2massets/[22m[36mindex-hpaEsx1q.js   [39m[1m[2m216.96 kB[22m[1m[22m[2m │ gzip: 68.54 kB[22m
+2025-08-11T09:19:29.7338135Z [32m✓ built in 1.27s[39m
+2025-08-11T09:19:29.7645566Z ##[debug]Finishing: Build project
+2025-08-11T09:19:29.7658858Z ##[debug]Evaluating condition for step: 'Deploy to server via SCP'
+2025-08-11T09:19:29.7661463Z ##[debug]Evaluating: success()
+2025-08-11T09:19:29.7662352Z ##[debug]Evaluating success:
+2025-08-11T09:19:29.7663286Z ##[debug]=> true
+2025-08-11T09:19:29.7664107Z ##[debug]Result: true
+2025-08-11T09:19:29.7665269Z ##[debug]Starting: Deploy to server via SCP
+2025-08-11T09:19:29.7806917Z ##[debug]Loading inputs
+2025-08-11T09:19:29.7812071Z ##[debug]Evaluating: secrets.SSH_HOST
+2025-08-11T09:19:29.7812865Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.7813488Z ##[debug]..Evaluating secrets:
+2025-08-11T09:19:29.7814188Z ##[debug]..=> Object
+2025-08-11T09:19:29.7814860Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.7815544Z ##[debug]..=> 'SSH_HOST'
+2025-08-11T09:19:29.7816284Z ##[debug]=> null
+2025-08-11T09:19:29.7816939Z ##[debug]Result: null
+2025-08-11T09:19:29.7819320Z ##[debug]Evaluating: secrets.SSH_USERNAME
+2025-08-11T09:19:29.7820174Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.7820931Z ##[debug]..Evaluating secrets:
+2025-08-11T09:19:29.7821616Z ##[debug]..=> Object
+2025-08-11T09:19:29.7822281Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.7822903Z ##[debug]..=> 'SSH_USERNAME'
+2025-08-11T09:19:29.7823607Z ##[debug]=> null
+2025-08-11T09:19:29.7824167Z ##[debug]Result: null
+2025-08-11T09:19:29.7825198Z ##[debug]Evaluating: secrets.SSH_PRIVATE_KEY
+2025-08-11T09:19:29.7825906Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.7826588Z ##[debug]..Evaluating secrets:
+2025-08-11T09:19:29.7827223Z ##[debug]..=> Object
+2025-08-11T09:19:29.7828003Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.7828625Z ##[debug]..=> 'SSH_PRIVATE_KEY'
+2025-08-11T09:19:29.7829717Z ##[debug]=> '***
+2025-08-11T09:19:29.7830489Z ##[debug]***
+2025-08-11T09:19:29.7831284Z ##[debug]***
+2025-08-11T09:19:29.7832104Z ##[debug]***
+2025-08-11T09:19:29.7832811Z ##[debug]***
+2025-08-11T09:19:29.7833620Z ##[debug]***
+2025-08-11T09:19:29.7834271Z ##[debug]***
+2025-08-11T09:19:29.7835118Z ##[debug]***
+2025-08-11T09:19:29.7835871Z ##[debug]***
+2025-08-11T09:19:29.7836636Z ##[debug]***
+2025-08-11T09:19:29.7837472Z ##[debug]***
+2025-08-11T09:19:29.7838432Z ##[debug]***
+2025-08-11T09:19:29.7839202Z ##[debug]***
+2025-08-11T09:19:29.7839941Z ##[debug]***
+2025-08-11T09:19:29.7840715Z ##[debug]***
+2025-08-11T09:19:29.7841462Z ##[debug]***
+2025-08-11T09:19:29.7842233Z ##[debug]***
+2025-08-11T09:19:29.7842945Z ##[debug]***
+2025-08-11T09:19:29.7843770Z ##[debug]***
+2025-08-11T09:19:29.7844507Z ##[debug]***
+2025-08-11T09:19:29.7845266Z ##[debug]***
+2025-08-11T09:19:29.7845970Z ##[debug]***
+2025-08-11T09:19:29.7846726Z ##[debug]***
+2025-08-11T09:19:29.7847408Z ##[debug]***
+2025-08-11T09:19:29.7848339Z ##[debug]***
+2025-08-11T09:19:29.7849133Z ##[debug]***
+2025-08-11T09:19:29.7849897Z ##[debug]***
+2025-08-11T09:19:29.7850532Z ##[debug]***
+2025-08-11T09:19:29.7851015Z ##[debug]***
+2025-08-11T09:19:29.7851498Z ##[debug]***
+2025-08-11T09:19:29.7852011Z ##[debug]***
+2025-08-11T09:19:29.7852499Z ##[debug]***
+2025-08-11T09:19:29.7853019Z ##[debug]***
+2025-08-11T09:19:29.7853518Z ##[debug]***
+2025-08-11T09:19:29.7854001Z ##[debug]***
+2025-08-11T09:19:29.7854485Z ##[debug]***
+2025-08-11T09:19:29.7854970Z ##[debug]***
+2025-08-11T09:19:29.7855452Z ##[debug]***
+2025-08-11T09:19:29.7855949Z ##[debug]***
+2025-08-11T09:19:29.7856441Z ##[debug]***
+2025-08-11T09:19:29.7856970Z ##[debug]***
+2025-08-11T09:19:29.7857481Z ##[debug]***
+2025-08-11T09:19:29.7858302Z ##[debug]***
+2025-08-11T09:19:29.7858833Z ##[debug]***
+2025-08-11T09:19:29.7859346Z ##[debug]***
+2025-08-11T09:19:29.7859877Z ##[debug]***
+2025-08-11T09:19:29.7860391Z ##[debug]***
+2025-08-11T09:19:29.7860913Z ##[debug]***
+2025-08-11T09:19:29.7861258Z ##[debug]***
+2025-08-11T09:19:29.7861636Z ##[debug]***'
+2025-08-11T09:19:29.7862149Z ##[debug]Result: '***
+2025-08-11T09:19:29.7862715Z ##[debug]***
+2025-08-11T09:19:29.7863236Z ##[debug]***
+2025-08-11T09:19:29.7863763Z ##[debug]***
+2025-08-11T09:19:29.7864255Z ##[debug]***
+2025-08-11T09:19:29.7864781Z ##[debug]***
+2025-08-11T09:19:29.7865494Z ##[debug]***
+2025-08-11T09:19:29.7866165Z ##[debug]***
+2025-08-11T09:19:29.7866697Z ##[debug]***
+2025-08-11T09:19:29.7867220Z ##[debug]***
+2025-08-11T09:19:29.7867836Z ##[debug]***
+2025-08-11T09:19:29.7868348Z ##[debug]***
+2025-08-11T09:19:29.7868854Z ##[debug]***
+2025-08-11T09:19:29.7869376Z ##[debug]***
+2025-08-11T09:19:29.7869887Z ##[debug]***
+2025-08-11T09:19:29.7870400Z ##[debug]***
+2025-08-11T09:19:29.7870927Z ##[debug]***
+2025-08-11T09:19:29.7871461Z ##[debug]***
+2025-08-11T09:19:29.7871997Z ##[debug]***
+2025-08-11T09:19:29.7872505Z ##[debug]***
+2025-08-11T09:19:29.7873018Z ##[debug]***
+2025-08-11T09:19:29.7873521Z ##[debug]***
+2025-08-11T09:19:29.7874014Z ##[debug]***
+2025-08-11T09:19:29.7874516Z ##[debug]***
+2025-08-11T09:19:29.7875038Z ##[debug]***
+2025-08-11T09:19:29.7875564Z ##[debug]***
+2025-08-11T09:19:29.7876088Z ##[debug]***
+2025-08-11T09:19:29.7876674Z ##[debug]***
+2025-08-11T09:19:29.7877206Z ##[debug]***
+2025-08-11T09:19:29.7877812Z ##[debug]***
+2025-08-11T09:19:29.7878387Z ##[debug]***
+2025-08-11T09:19:29.7878950Z ##[debug]***
+2025-08-11T09:19:29.7879516Z ##[debug]***
+2025-08-11T09:19:29.7880079Z ##[debug]***
+2025-08-11T09:19:29.7880618Z ##[debug]***
+2025-08-11T09:19:29.7881162Z ##[debug]***
+2025-08-11T09:19:29.7881695Z ##[debug]***
+2025-08-11T09:19:29.7882222Z ##[debug]***
+2025-08-11T09:19:29.7882790Z ##[debug]***
+2025-08-11T09:19:29.7883338Z ##[debug]***
+2025-08-11T09:19:29.7883903Z ##[debug]***
+2025-08-11T09:19:29.7884435Z ##[debug]***
+2025-08-11T09:19:29.7884982Z ##[debug]***
+2025-08-11T09:19:29.7885568Z ##[debug]***
+2025-08-11T09:19:29.7886138Z ##[debug]***
+2025-08-11T09:19:29.7886710Z ##[debug]***
+2025-08-11T09:19:29.7887242Z ##[debug]***
+2025-08-11T09:19:29.7887887Z ##[debug]***
+2025-08-11T09:19:29.7888241Z ##[debug]***
+2025-08-11T09:19:29.7888630Z ##[debug]***'
+2025-08-11T09:19:29.7895634Z ##[debug]Evaluating: (secrets.SSH_PORT || 22)
+2025-08-11T09:19:29.7896190Z ##[debug]Evaluating Or:
+2025-08-11T09:19:29.7896628Z ##[debug]..Evaluating Index:
+2025-08-11T09:19:29.7897066Z ##[debug]....Evaluating secrets:
+2025-08-11T09:19:29.7897528Z ##[debug]....=> Object
+2025-08-11T09:19:29.7898292Z ##[debug]....Evaluating String:
+2025-08-11T09:19:29.7898819Z ##[debug]....=> 'SSH_PORT'
+2025-08-11T09:19:29.7899287Z ##[debug]..=> null
+2025-08-11T09:19:29.7899756Z ##[debug]..Evaluating Number:
+2025-08-11T09:19:29.7900247Z ##[debug]..=> 22
+2025-08-11T09:19:29.7900633Z ##[debug]=> 22
+2025-08-11T09:19:29.7901076Z ##[debug]Expanded: (null || 22)
+2025-08-11T09:19:29.7901496Z ##[debug]Result: 22
+2025-08-11T09:19:29.7933532Z ##[debug]Loading env
+2025-08-11T09:19:29.7943548Z ##[group]Run appleboy/scp-action@master
+2025-08-11T09:19:29.7944009Z with:
+2025-08-11T09:19:29.7963094Z   key: ***
+2025-08-11T09:19:29.7963466Z   port: 22
+2025-08-11T09:19:29.7963818Z   source: dist/*
+2025-08-11T09:19:29.7964191Z   target: /aitut.eu
+2025-08-11T09:19:29.7964567Z   strip_components: 1
+2025-08-11T09:19:29.7964957Z   protocol: tcp
+2025-08-11T09:19:29.7965324Z   timeout: 30s
+2025-08-11T09:19:29.7965691Z   command_timeout: 10m
+2025-08-11T09:19:29.7966087Z   tar_exec: tar
+2025-08-11T09:19:29.7966440Z   proxy_port: 22
+2025-08-11T09:19:29.7966803Z   proxy_timeout: 30s
+2025-08-11T09:19:29.7967176Z   curl_insecure: false
+2025-08-11T09:19:29.7967548Z   capture_stdout: false
+2025-08-11T09:19:29.7968057Z ##[endgroup]
+2025-08-11T09:19:29.8016052Z ##[debug]Evaluating: github.action_path
+2025-08-11T09:19:29.8016581Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8017028Z ##[debug]..Evaluating github:
+2025-08-11T09:19:29.8017469Z ##[debug]..=> Object
+2025-08-11T09:19:29.8018224Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8018714Z ##[debug]..=> 'action_path'
+2025-08-11T09:19:29.8019255Z ##[debug]=> '/home/runner/work/_actions/appleboy/scp-action/master'
+2025-08-11T09:19:29.8019930Z ##[debug]Result: '/home/runner/work/_actions/appleboy/scp-action/master'
+2025-08-11T09:19:29.8024427Z ##[debug]Evaluating condition for step: 'run'
+2025-08-11T09:19:29.8025778Z ##[debug]Evaluating: success()
+2025-08-11T09:19:29.8026390Z ##[debug]Evaluating success:
+2025-08-11T09:19:29.8027678Z ##[debug]=> true
+2025-08-11T09:19:29.8028498Z ##[debug]Result: true
+2025-08-11T09:19:29.8036376Z ##[debug]Starting: run
+2025-08-11T09:19:29.8044915Z ##[debug]Loading inputs
+2025-08-11T09:19:29.8045997Z ##[debug]Loading env
+2025-08-11T09:19:29.8052685Z ##[group]Run echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+2025-08-11T09:19:29.8053252Z [36;1mecho "$GITHUB_ACTION_PATH" >> $GITHUB_PATH[0m
+2025-08-11T09:19:29.8097457Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-08-11T09:19:29.8098277Z env:
+2025-08-11T09:19:29.8098851Z   GITHUB_ACTION_PATH: /home/runner/work/_actions/appleboy/scp-action/master
+2025-08-11T09:19:29.8099522Z ##[endgroup]
+2025-08-11T09:19:29.8140490Z ##[debug]/usr/bin/bash --noprofile --norc -e -o pipefail /home/runner/work/_temp/c10399e4-515c-476d-8aea-caaae81d3357.sh
+2025-08-11T09:19:29.8174767Z ##[debug]Finished: run
+2025-08-11T09:19:29.8181322Z ##[debug]Evaluating: github.action_path
+2025-08-11T09:19:29.8181836Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8182289Z ##[debug]..Evaluating github:
+2025-08-11T09:19:29.8182748Z ##[debug]..=> Object
+2025-08-11T09:19:29.8183161Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8183603Z ##[debug]..=> 'action_path'
+2025-08-11T09:19:29.8184137Z ##[debug]=> '/home/runner/work/_actions/appleboy/scp-action/master'
+2025-08-11T09:19:29.8184822Z ##[debug]Result: '/home/runner/work/_actions/appleboy/scp-action/master'
+2025-08-11T09:19:29.8185658Z ##[debug]Evaluating: inputs.host
+2025-08-11T09:19:29.8186099Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8186513Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8186938Z ##[debug]..=> Object
+2025-08-11T09:19:29.8187350Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8187963Z ##[debug]..=> 'host'
+2025-08-11T09:19:29.8188387Z ##[debug]=> ''
+2025-08-11T09:19:29.8188762Z ##[debug]Result: ''
+2025-08-11T09:19:29.8189409Z ##[debug]Evaluating: inputs.port
+2025-08-11T09:19:29.8189846Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8190263Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8190720Z ##[debug]..=> Object
+2025-08-11T09:19:29.8191120Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8191542Z ##[debug]..=> 'port'
+2025-08-11T09:19:29.8191937Z ##[debug]=> '22'
+2025-08-11T09:19:29.8192335Z ##[debug]Result: '22'
+2025-08-11T09:19:29.8192934Z ##[debug]Evaluating: inputs.protocol
+2025-08-11T09:19:29.8193385Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8193808Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8194222Z ##[debug]..=> Object
+2025-08-11T09:19:29.8194614Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8195038Z ##[debug]..=> 'protocol'
+2025-08-11T09:19:29.8195454Z ##[debug]=> 'tcp'
+2025-08-11T09:19:29.8195837Z ##[debug]Result: 'tcp'
+2025-08-11T09:19:29.8196422Z ##[debug]Evaluating: inputs.username
+2025-08-11T09:19:29.8196871Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8197280Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8197712Z ##[debug]..=> Object
+2025-08-11T09:19:29.8198314Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8198719Z ##[debug]..=> 'username'
+2025-08-11T09:19:29.8199107Z ##[debug]=> ''
+2025-08-11T09:19:29.8199461Z ##[debug]Result: ''
+2025-08-11T09:19:29.8200210Z ##[debug]Evaluating: inputs.password
+2025-08-11T09:19:29.8200645Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8201040Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8201441Z ##[debug]..=> Object
+2025-08-11T09:19:29.8201831Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8202259Z ##[debug]..=> 'password'
+2025-08-11T09:19:29.8202645Z ##[debug]=> ''
+2025-08-11T09:19:29.8202998Z ##[debug]Result: ''
+2025-08-11T09:19:29.8203560Z ##[debug]Evaluating: inputs.passphrase
+2025-08-11T09:19:29.8204003Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8204393Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8204782Z ##[debug]..=> Object
+2025-08-11T09:19:29.8205145Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8205539Z ##[debug]..=> 'passphrase'
+2025-08-11T09:19:29.8205911Z ##[debug]=> ''
+2025-08-11T09:19:29.8206258Z ##[debug]Result: ''
+2025-08-11T09:19:29.8206962Z ##[debug]Evaluating: inputs.key
+2025-08-11T09:19:29.8207473Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8208035Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8208461Z ##[debug]..=> Object
+2025-08-11T09:19:29.8208834Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8209231Z ##[debug]..=> 'key'
+2025-08-11T09:19:29.8209784Z ##[debug]=> '***
+2025-08-11T09:19:29.8210365Z ##[debug]***
+2025-08-11T09:19:29.8210911Z ##[debug]***
+2025-08-11T09:19:29.8211463Z ##[debug]***
+2025-08-11T09:19:29.8211981Z ##[debug]***
+2025-08-11T09:19:29.8212536Z ##[debug]***
+2025-08-11T09:19:29.8213043Z ##[debug]***
+2025-08-11T09:19:29.8213583Z ##[debug]***
+2025-08-11T09:19:29.8214107Z ##[debug]***
+2025-08-11T09:19:29.8214628Z ##[debug]***
+2025-08-11T09:19:29.8215130Z ##[debug]***
+2025-08-11T09:19:29.8215634Z ##[debug]***
+2025-08-11T09:19:29.8216138Z ##[debug]***
+2025-08-11T09:19:29.8216651Z ##[debug]***
+2025-08-11T09:19:29.8217162Z ##[debug]***
+2025-08-11T09:19:29.8217662Z ##[debug]***
+2025-08-11T09:19:29.8218381Z ##[debug]***
+2025-08-11T09:19:29.8218923Z ##[debug]***
+2025-08-11T09:19:29.8219449Z ##[debug]***
+2025-08-11T09:19:29.8219951Z ##[debug]***
+2025-08-11T09:19:29.8220464Z ##[debug]***
+2025-08-11T09:19:29.8220978Z ##[debug]***
+2025-08-11T09:19:29.8221480Z ##[debug]***
+2025-08-11T09:19:29.8221990Z ##[debug]***
+2025-08-11T09:19:29.8222520Z ##[debug]***
+2025-08-11T09:19:29.8223053Z ##[debug]***
+2025-08-11T09:19:29.8223571Z ##[debug]***
+2025-08-11T09:19:29.8224105Z ##[debug]***
+2025-08-11T09:19:29.8224591Z ##[debug]***
+2025-08-11T09:19:29.8225072Z ##[debug]***
+2025-08-11T09:19:29.8225601Z ##[debug]***
+2025-08-11T09:19:29.8226110Z ##[debug]***
+2025-08-11T09:19:29.8226632Z ##[debug]***
+2025-08-11T09:19:29.8227152Z ##[debug]***
+2025-08-11T09:19:29.8227662Z ##[debug]***
+2025-08-11T09:19:29.8228364Z ##[debug]***
+2025-08-11T09:19:29.8228861Z ##[debug]***
+2025-08-11T09:19:29.8229346Z ##[debug]***
+2025-08-11T09:19:29.8229876Z ##[debug]***
+2025-08-11T09:19:29.8230380Z ##[debug]***
+2025-08-11T09:19:29.8230918Z ##[debug]***
+2025-08-11T09:19:29.8231430Z ##[debug]***
+2025-08-11T09:19:29.8231972Z ##[debug]***
+2025-08-11T09:19:29.8232497Z ##[debug]***
+2025-08-11T09:19:29.8233019Z ##[debug]***
+2025-08-11T09:19:29.8233551Z ##[debug]***
+2025-08-11T09:19:29.8234062Z ##[debug]***
+2025-08-11T09:19:29.8234580Z ##[debug]***
+2025-08-11T09:19:29.8234924Z ##[debug]***
+2025-08-11T09:19:29.8235286Z ##[debug]***'
+2025-08-11T09:19:29.8235791Z ##[debug]Result: '***
+2025-08-11T09:19:29.8236368Z ##[debug]***
+2025-08-11T09:19:29.8236902Z ##[debug]***
+2025-08-11T09:19:29.8237435Z ##[debug]***
+2025-08-11T09:19:29.8238081Z ##[debug]***
+2025-08-11T09:19:29.8238619Z ##[debug]***
+2025-08-11T09:19:29.8239116Z ##[debug]***
+2025-08-11T09:19:29.8239644Z ##[debug]***
+2025-08-11T09:19:29.8240162Z ##[debug]***
+2025-08-11T09:19:29.8240689Z ##[debug]***
+2025-08-11T09:19:29.8241208Z ##[debug]***
+2025-08-11T09:19:29.8241718Z ##[debug]***
+2025-08-11T09:19:29.8242228Z ##[debug]***
+2025-08-11T09:19:29.8242745Z ##[debug]***
+2025-08-11T09:19:29.8243303Z ##[debug]***
+2025-08-11T09:19:29.8243812Z ##[debug]***
+2025-08-11T09:19:29.8244336Z ##[debug]***
+2025-08-11T09:19:29.8244856Z ##[debug]***
+2025-08-11T09:19:29.8245377Z ##[debug]***
+2025-08-11T09:19:29.8245864Z ##[debug]***
+2025-08-11T09:19:29.8246379Z ##[debug]***
+2025-08-11T09:19:29.8246888Z ##[debug]***
+2025-08-11T09:19:29.8247385Z ##[debug]***
+2025-08-11T09:19:29.8248042Z ##[debug]***
+2025-08-11T09:19:29.8248578Z ##[debug]***
+2025-08-11T09:19:29.8249125Z ##[debug]***
+2025-08-11T09:19:29.8249645Z ##[debug]***
+2025-08-11T09:19:29.8250172Z ##[debug]***
+2025-08-11T09:19:29.8250658Z ##[debug]***
+2025-08-11T09:19:29.8251156Z ##[debug]***
+2025-08-11T09:19:29.8251679Z ##[debug]***
+2025-08-11T09:19:29.8252212Z ##[debug]***
+2025-08-11T09:19:29.8252736Z ##[debug]***
+2025-08-11T09:19:29.8253271Z ##[debug]***
+2025-08-11T09:19:29.8253777Z ##[debug]***
+2025-08-11T09:19:29.8254293Z ##[debug]***
+2025-08-11T09:19:29.8254790Z ##[debug]***
+2025-08-11T09:19:29.8255281Z ##[debug]***
+2025-08-11T09:19:29.8255791Z ##[debug]***
+2025-08-11T09:19:29.8256295Z ##[debug]***
+2025-08-11T09:19:29.8257074Z ##[debug]***
+2025-08-11T09:19:29.8257587Z ##[debug]***
+2025-08-11T09:19:29.8258316Z ##[debug]***
+2025-08-11T09:19:29.8258851Z ##[debug]***
+2025-08-11T09:19:29.8259362Z ##[debug]***
+2025-08-11T09:19:29.8259902Z ##[debug]***
+2025-08-11T09:19:29.8260429Z ##[debug]***
+2025-08-11T09:19:29.8260949Z ##[debug]***
+2025-08-11T09:19:29.8261307Z ##[debug]***
+2025-08-11T09:19:29.8261677Z ##[debug]***'
+2025-08-11T09:19:29.8262368Z ##[debug]Evaluating: inputs.key_path
+2025-08-11T09:19:29.8262814Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8263210Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8263623Z ##[debug]..=> Object
+2025-08-11T09:19:29.8263997Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8264389Z ##[debug]..=> 'key_path'
+2025-08-11T09:19:29.8264777Z ##[debug]=> ''
+2025-08-11T09:19:29.8265124Z ##[debug]Result: ''
+2025-08-11T09:19:29.8265697Z ##[debug]Evaluating: inputs.fingerprint
+2025-08-11T09:19:29.8266144Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8266544Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8266946Z ##[debug]..=> Object
+2025-08-11T09:19:29.8267319Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8267706Z ##[debug]..=> 'fingerprint'
+2025-08-11T09:19:29.8268295Z ##[debug]=> ''
+2025-08-11T09:19:29.8268662Z ##[debug]Result: ''
+2025-08-11T09:19:29.8269284Z ##[debug]Evaluating: inputs.proxy_host
+2025-08-11T09:19:29.8269727Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8270114Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8270513Z ##[debug]..=> Object
+2025-08-11T09:19:29.8270894Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8271292Z ##[debug]..=> 'proxy_host'
+2025-08-11T09:19:29.8271686Z ##[debug]=> ''
+2025-08-11T09:19:29.8272031Z ##[debug]Result: ''
+2025-08-11T09:19:29.8272594Z ##[debug]Evaluating: inputs.proxy_port
+2025-08-11T09:19:29.8273046Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8273433Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8273830Z ##[debug]..=> Object
+2025-08-11T09:19:29.8274194Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8288630Z ##[debug]..=> 'proxy_port'
+2025-08-11T09:19:29.8289290Z ##[debug]=> '22'
+2025-08-11T09:19:29.8289682Z ##[debug]Result: '22'
+2025-08-11T09:19:29.8290595Z ##[debug]Evaluating: inputs.proxy_username
+2025-08-11T09:19:29.8291113Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8291506Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8291915Z ##[debug]..=> Object
+2025-08-11T09:19:29.8292288Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8292689Z ##[debug]..=> 'proxy_username'
+2025-08-11T09:19:29.8293087Z ##[debug]=> ''
+2025-08-11T09:19:29.8293439Z ##[debug]Result: ''
+2025-08-11T09:19:29.8294052Z ##[debug]Evaluating: inputs.proxy_password
+2025-08-11T09:19:29.8294501Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8294896Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8295289Z ##[debug]..=> Object
+2025-08-11T09:19:29.8295654Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8296048Z ##[debug]..=> 'proxy_password'
+2025-08-11T09:19:29.8296434Z ##[debug]=> ''
+2025-08-11T09:19:29.8296790Z ##[debug]Result: ''
+2025-08-11T09:19:29.8297369Z ##[debug]Evaluating: inputs.proxy_passphrase
+2025-08-11T09:19:29.8298059Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8298473Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8298879Z ##[debug]..=> Object
+2025-08-11T09:19:29.8299266Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8300050Z ##[debug]..=> 'proxy_passphrase'
+2025-08-11T09:19:29.8300498Z ##[debug]=> ''
+2025-08-11T09:19:29.8300852Z ##[debug]Result: ''
+2025-08-11T09:19:29.8301538Z ##[debug]Evaluating: inputs.proxy_key
+2025-08-11T09:19:29.8301981Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8302366Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8302773Z ##[debug]..=> Object
+2025-08-11T09:19:29.8303137Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8303537Z ##[debug]..=> 'proxy_key'
+2025-08-11T09:19:29.8303916Z ##[debug]=> ''
+2025-08-11T09:19:29.8304265Z ##[debug]Result: ''
+2025-08-11T09:19:29.8304823Z ##[debug]Evaluating: inputs.proxy_key_path
+2025-08-11T09:19:29.8305277Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8305973Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8306374Z ##[debug]..=> Object
+2025-08-11T09:19:29.8306748Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8307137Z ##[debug]..=> 'proxy_key_path'
+2025-08-11T09:19:29.8307535Z ##[debug]=> ''
+2025-08-11T09:19:29.8308069Z ##[debug]Result: ''
+2025-08-11T09:19:29.8308749Z ##[debug]Evaluating: inputs.proxy_fingerprint
+2025-08-11T09:19:29.8309211Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8309594Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8310008Z ##[debug]..=> Object
+2025-08-11T09:19:29.8310370Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8310769Z ##[debug]..=> 'proxy_fingerprint'
+2025-08-11T09:19:29.8311182Z ##[debug]=> ''
+2025-08-11T09:19:29.8311539Z ##[debug]Result: ''
+2025-08-11T09:19:29.8312210Z ##[debug]Evaluating: inputs.use_insecure_cipher
+2025-08-11T09:19:29.8312672Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8313066Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8313457Z ##[debug]..=> Object
+2025-08-11T09:19:29.8313846Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8314250Z ##[debug]..=> 'use_insecure_cipher'
+2025-08-11T09:19:29.8314669Z ##[debug]=> ''
+2025-08-11T09:19:29.8315018Z ##[debug]Result: ''
+2025-08-11T09:19:29.8315678Z ##[debug]Evaluating: inputs.cipher
+2025-08-11T09:19:29.8316114Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8316506Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8316910Z ##[debug]..=> Object
+2025-08-11T09:19:29.8317276Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8317671Z ##[debug]..=> 'cipher'
+2025-08-11T09:19:29.8318214Z ##[debug]=> null
+2025-08-11T09:19:29.8318573Z ##[debug]Result: null
+2025-08-11T09:19:29.8319238Z ##[debug]Evaluating: inputs.proxy_use_insecure_cipher
+2025-08-11T09:19:29.8320018Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8320397Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8320782Z ##[debug]..=> Object
+2025-08-11T09:19:29.8321131Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8321534Z ##[debug]..=> 'proxy_use_insecure_cipher'
+2025-08-11T09:19:29.8321989Z ##[debug]=> ''
+2025-08-11T09:19:29.8322518Z ##[debug]Result: ''
+2025-08-11T09:19:29.8323182Z ##[debug]Evaluating: inputs.proxy_cipher
+2025-08-11T09:19:29.8323609Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8323999Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8324387Z ##[debug]..=> Object
+2025-08-11T09:19:29.8324754Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8325139Z ##[debug]..=> 'proxy_cipher'
+2025-08-11T09:19:29.8325534Z ##[debug]=> null
+2025-08-11T09:19:29.8325879Z ##[debug]Result: null
+2025-08-11T09:19:29.8326452Z ##[debug]Evaluating: inputs.debug
+2025-08-11T09:19:29.8326857Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8327244Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8327648Z ##[debug]..=> Object
+2025-08-11T09:19:29.8328247Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8328637Z ##[debug]..=> 'debug'
+2025-08-11T09:19:29.8329065Z ##[debug]=> ''
+2025-08-11T09:19:29.8329431Z ##[debug]Result: ''
+2025-08-11T09:19:29.8330121Z ##[debug]Evaluating: inputs.timeout
+2025-08-11T09:19:29.8330813Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8331263Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8331722Z ##[debug]..=> Object
+2025-08-11T09:19:29.8332096Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8332498Z ##[debug]..=> 'timeout'
+2025-08-11T09:19:29.8332884Z ##[debug]=> '30s'
+2025-08-11T09:19:29.8333252Z ##[debug]Result: '30s'
+2025-08-11T09:19:29.8333898Z ##[debug]Evaluating: inputs.command_timeout
+2025-08-11T09:19:29.8334351Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8334750Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8335146Z ##[debug]..=> Object
+2025-08-11T09:19:29.8335524Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8335919Z ##[debug]..=> 'command_timeout'
+2025-08-11T09:19:29.8336329Z ##[debug]=> '10m'
+2025-08-11T09:19:29.8336693Z ##[debug]Result: '10m'
+2025-08-11T09:19:29.8337244Z ##[debug]Evaluating: inputs.target
+2025-08-11T09:19:29.8337673Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8338299Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8339043Z ##[debug]..=> Object
+2025-08-11T09:19:29.8339424Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8339823Z ##[debug]..=> 'target'
+2025-08-11T09:19:29.8340218Z ##[debug]=> '/aitut.eu'
+2025-08-11T09:19:29.8340608Z ##[debug]Result: '/aitut.eu'
+2025-08-11T09:19:29.8341277Z ##[debug]Evaluating: inputs.source
+2025-08-11T09:19:29.8341699Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8342097Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8342492Z ##[debug]..=> Object
+2025-08-11T09:19:29.8342868Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8343256Z ##[debug]..=> 'source'
+2025-08-11T09:19:29.8343635Z ##[debug]=> 'dist/*'
+2025-08-11T09:19:29.8343999Z ##[debug]Result: 'dist/*'
+2025-08-11T09:19:29.8344554Z ##[debug]Evaluating: inputs.rm
+2025-08-11T09:19:29.8344967Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8345360Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8345771Z ##[debug]..=> Object
+2025-08-11T09:19:29.8346140Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8346558Z ##[debug]..=> 'rm'
+2025-08-11T09:19:29.8346938Z ##[debug]=> ''
+2025-08-11T09:19:29.8347302Z ##[debug]Result: ''
+2025-08-11T09:19:29.8348037Z ##[debug]Evaluating: inputs.strip_components
+2025-08-11T09:19:29.8348520Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8348926Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8349329Z ##[debug]..=> Object
+2025-08-11T09:19:29.8349705Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8350106Z ##[debug]..=> 'strip_components'
+2025-08-11T09:19:29.8350527Z ##[debug]=> '1'
+2025-08-11T09:19:29.8350889Z ##[debug]Result: '1'
+2025-08-11T09:19:29.8351487Z ##[debug]Evaluating: inputs.overwrite
+2025-08-11T09:19:29.8351925Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8352317Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8352709Z ##[debug]..=> Object
+2025-08-11T09:19:29.8353093Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8353490Z ##[debug]..=> 'overwrite'
+2025-08-11T09:19:29.8353875Z ##[debug]=> ''
+2025-08-11T09:19:29.8354223Z ##[debug]Result: ''
+2025-08-11T09:19:29.8354795Z ##[debug]Evaluating: inputs.tar_dereference
+2025-08-11T09:19:29.8355240Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8355622Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8356019Z ##[debug]..=> Object
+2025-08-11T09:19:29.8356381Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8356775Z ##[debug]..=> 'tar_dereference'
+2025-08-11T09:19:29.8357168Z ##[debug]=> ''
+2025-08-11T09:19:29.8357515Z ##[debug]Result: ''
+2025-08-11T09:19:29.8358264Z ##[debug]Evaluating: inputs.tar_tmp_path
+2025-08-11T09:19:29.8358707Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8359100Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8359490Z ##[debug]..=> Object
+2025-08-11T09:19:29.8359860Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8360248Z ##[debug]..=> 'tar_tmp_path'
+2025-08-11T09:19:29.8360645Z ##[debug]=> ''
+2025-08-11T09:19:29.8360990Z ##[debug]Result: ''
+2025-08-11T09:19:29.8361527Z ##[debug]Evaluating: inputs.tar_exec
+2025-08-11T09:19:29.8361947Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8362342Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8362741Z ##[debug]..=> Object
+2025-08-11T09:19:29.8363102Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8363492Z ##[debug]..=> 'tar_exec'
+2025-08-11T09:19:29.8363868Z ##[debug]=> 'tar'
+2025-08-11T09:19:29.8364228Z ##[debug]Result: 'tar'
+2025-08-11T09:19:29.8364902Z ##[debug]Evaluating: inputs.proxy_timeout
+2025-08-11T09:19:29.8365340Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8365725Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8366113Z ##[debug]..=> Object
+2025-08-11T09:19:29.8366475Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8366859Z ##[debug]..=> 'proxy_timeout'
+2025-08-11T09:19:29.8367251Z ##[debug]=> '30s'
+2025-08-11T09:19:29.8367603Z ##[debug]Result: '30s'
+2025-08-11T09:19:29.8368380Z ##[debug]Evaluating: inputs.capture_stdout
+2025-08-11T09:19:29.8368835Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8369219Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8369619Z ##[debug]..=> Object
+2025-08-11T09:19:29.8370255Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8370659Z ##[debug]..=> 'capture_stdout'
+2025-08-11T09:19:29.8371059Z ##[debug]=> 'false'
+2025-08-11T09:19:29.8371421Z ##[debug]Result: 'false'
+2025-08-11T09:19:29.8372011Z ##[debug]Evaluating: inputs.curl_insecure
+2025-08-11T09:19:29.8372442Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8372825Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8373210Z ##[debug]..=> Object
+2025-08-11T09:19:29.8373582Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8373963Z ##[debug]..=> 'curl_insecure'
+2025-08-11T09:19:29.8374347Z ##[debug]=> 'false'
+2025-08-11T09:19:29.8374704Z ##[debug]Result: 'false'
+2025-08-11T09:19:29.8375487Z ##[debug]Evaluating: inputs.version
+2025-08-11T09:19:29.8375935Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.8376321Z ##[debug]..Evaluating inputs:
+2025-08-11T09:19:29.8376723Z ##[debug]..=> Object
+2025-08-11T09:19:29.8377093Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.8377486Z ##[debug]..=> 'version'
+2025-08-11T09:19:29.8378065Z ##[debug]=> ''
+2025-08-11T09:19:29.8378434Z ##[debug]Result: ''
+2025-08-11T09:19:29.8379384Z ##[debug]Evaluating condition for step: 'run'
+2025-08-11T09:19:29.8380627Z ##[debug]Evaluating: success()
+2025-08-11T09:19:29.8381281Z ##[debug]Evaluating success:
+2025-08-11T09:19:29.8382026Z ##[debug]=> true
+2025-08-11T09:19:29.8382589Z ##[debug]Result: true
+2025-08-11T09:19:29.8383304Z ##[debug]Starting: run
+2025-08-11T09:19:29.8392580Z ##[debug]Loading inputs
+2025-08-11T09:19:29.8393632Z ##[debug]Loading env
+2025-08-11T09:19:29.8399397Z ##[group]Run entrypoint.sh
+2025-08-11T09:19:29.8399791Z [36;1mentrypoint.sh[0m
+2025-08-11T09:19:29.8439215Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-08-11T09:19:29.8439771Z env:
+2025-08-11T09:19:29.8440297Z   GITHUB_ACTION_PATH: /home/runner/work/_actions/appleboy/scp-action/master
+2025-08-11T09:19:29.8440922Z   INPUT_HOST: 
+2025-08-11T09:19:29.8441312Z   INPUT_PORT: 22
+2025-08-11T09:19:29.8441708Z   INPUT_PROTOCOL: tcp
+2025-08-11T09:19:29.8442124Z   INPUT_USERNAME: 
+2025-08-11T09:19:29.8442535Z   INPUT_PASSWORD: 
+2025-08-11T09:19:29.8442923Z   INPUT_PASSPHRASE: 
+2025-08-11T09:19:29.8460856Z   INPUT_KEY: ***
+2025-08-11T09:19:29.8461231Z   INPUT_KEY_PATH: 
+2025-08-11T09:19:29.8461586Z   INPUT_FINGERPRINT: 
+2025-08-11T09:19:29.8461944Z   INPUT_PROXY_HOST: 
+2025-08-11T09:19:29.8462296Z   INPUT_PROXY_PORT: 22
+2025-08-11T09:19:29.8462663Z   INPUT_PROXY_USERNAME: 
+2025-08-11T09:19:29.8463028Z   INPUT_PROXY_PASSWORD: 
+2025-08-11T09:19:29.8463409Z   INPUT_PROXY_PASSPHRASE: 
+2025-08-11T09:19:29.8463784Z   INPUT_PROXY_KEY: 
+2025-08-11T09:19:29.8464140Z   INPUT_PROXY_KEY_PATH: 
+2025-08-11T09:19:29.8464510Z   INPUT_PROXY_FINGERPRINT: 
+2025-08-11T09:19:29.8464895Z   INPUT_USE_INSECURE_CIPHER: 
+2025-08-11T09:19:29.8465274Z   INPUT_CIPHER: 
+2025-08-11T09:19:29.8465638Z   INPUT_PROXY_USE_INSECURE_CIPHER: 
+2025-08-11T09:19:29.8466044Z   INPUT_PROXY_CIPHER: 
+2025-08-11T09:19:29.8466395Z   INPUT_DEBUG: 
+2025-08-11T09:19:29.8466733Z   INPUT_TIMEOUT: 30s
+2025-08-11T09:19:29.8467106Z   INPUT_COMMAND_TIMEOUT: 10m
+2025-08-11T09:19:29.8467490Z   INPUT_TARGET: /aitut.eu
+2025-08-11T09:19:29.8468011Z   INPUT_SOURCE: dist/*
+2025-08-11T09:19:29.8468351Z   INPUT_RM: 
+2025-08-11T09:19:29.8468682Z   INPUT_STRIP_COMPONENTS: 1
+2025-08-11T09:19:29.8469023Z   INPUT_OVERWRITE: 
+2025-08-11T09:19:29.8469350Z   INPUT_TAR_DEREFERENCE: 
+2025-08-11T09:19:29.8469691Z   INPUT_TAR_TMP_PATH: 
+2025-08-11T09:19:29.8470025Z   INPUT_TAR_EXEC: tar
+2025-08-11T09:19:29.8470365Z   INPUT_PROXY_TIMEOUT: 30s
+2025-08-11T09:19:29.8470722Z   INPUT_CAPTURE_STDOUT: false
+2025-08-11T09:19:29.8471086Z   INPUT_CURL_INSECURE: false
+2025-08-11T09:19:29.8471450Z   DRONE_SCP_VERSION: 
+2025-08-11T09:19:29.8471783Z ##[endgroup]
+2025-08-11T09:19:29.8511934Z ##[debug]/usr/bin/bash --noprofile --norc -e -o pipefail /home/runner/work/_temp/5028e152-3032-4ef7-a743-0be319d79179.sh
+2025-08-11T09:19:29.8592033Z Downloading drone-scp-1.8.0-linux-amd64 from https://github.com/appleboy/drone-scp/releases/download/v1.8.0
+2025-08-11T09:19:29.9566146Z ======= CLI Version Information =======
+2025-08-11T09:19:29.9585082Z Drone SCP version 1.8.0
+2025-08-11T09:19:29.9589466Z =======================================
+2025-08-11T09:19:29.9616485Z 2025/08/11 09:19:29 Error: missing server host
+2025-08-11T09:19:29.9636029Z ##[error]Process completed with exit code 1.
+2025-08-11T09:19:29.9645418Z ##[debug]Finished: run
+2025-08-11T09:19:29.9669448Z ##[debug]Evaluating: steps.entrypoint.outputs.stdout
+2025-08-11T09:19:29.9670177Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.9670694Z ##[debug]..Evaluating Index:
+2025-08-11T09:19:29.9671177Z ##[debug]....Evaluating Index:
+2025-08-11T09:19:29.9689828Z ##[debug]......Evaluating steps:
+2025-08-11T09:19:29.9691159Z ##[debug]......=> Object
+2025-08-11T09:19:29.9692238Z ##[debug]......Evaluating String:
+2025-08-11T09:19:29.9692981Z ##[debug]......=> 'entrypoint'
+2025-08-11T09:19:29.9693699Z ##[debug]....=> Object
+2025-08-11T09:19:29.9694502Z ##[debug]....Evaluating String:
+2025-08-11T09:19:29.9695560Z ##[debug]....=> 'outputs'
+2025-08-11T09:19:29.9696309Z ##[debug]..=> Object
+2025-08-11T09:19:29.9696931Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.9697564Z ##[debug]..=> 'stdout'
+2025-08-11T09:19:29.9698447Z ##[debug]=> null
+2025-08-11T09:19:29.9699097Z ##[debug]Result: null
+2025-08-11T09:19:29.9707657Z ##[debug]Finishing: Deploy to server via SCP
+2025-08-11T09:19:29.9735373Z ##[debug]Evaluating condition for step: 'Post Set up Node.js'
+2025-08-11T09:19:29.9736891Z ##[debug]Evaluating: success()
+2025-08-11T09:19:29.9737557Z ##[debug]Evaluating success:
+2025-08-11T09:19:29.9738469Z ##[debug]=> false
+2025-08-11T09:19:29.9739157Z ##[debug]Result: false
+2025-08-11T09:19:29.9745735Z ##[debug]Evaluating condition for step: 'Post Checkout code'
+2025-08-11T09:19:29.9747963Z ##[debug]Evaluating: always()
+2025-08-11T09:19:29.9748660Z ##[debug]Evaluating always:
+2025-08-11T09:19:29.9749733Z ##[debug]=> true
+2025-08-11T09:19:29.9750426Z ##[debug]Result: true
+2025-08-11T09:19:29.9751226Z ##[debug]Starting: Post Checkout code
+2025-08-11T09:19:29.9803525Z ##[debug]Loading inputs
+2025-08-11T09:19:29.9804705Z ##[debug]Evaluating: github.repository
+2025-08-11T09:19:29.9805184Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.9805582Z ##[debug]..Evaluating github:
+2025-08-11T09:19:29.9806005Z ##[debug]..=> Object
+2025-08-11T09:19:29.9806388Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.9806801Z ##[debug]..=> 'repository'
+2025-08-11T09:19:29.9807225Z ##[debug]=> 'ai-tut/aitut_site'
+2025-08-11T09:19:29.9807641Z ##[debug]Result: 'ai-tut/aitut_site'
+2025-08-11T09:19:29.9809850Z ##[debug]Evaluating: github.token
+2025-08-11T09:19:29.9810319Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.9810768Z ##[debug]..Evaluating github:
+2025-08-11T09:19:29.9811206Z ##[debug]..=> Object
+2025-08-11T09:19:29.9811610Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.9812168Z ##[debug]..=> 'token'
+2025-08-11T09:19:29.9812883Z ##[debug]=> '***'
+2025-08-11T09:19:29.9813393Z ##[debug]Result: '***'
+2025-08-11T09:19:29.9824431Z ##[debug]Loading env
+2025-08-11T09:19:29.9830401Z Post job cleanup.
+2025-08-11T09:19:30.0779148Z ##[debug]Getting git version
+2025-08-11T09:19:30.0793547Z [command]/usr/bin/git version
+2025-08-11T09:19:30.0831814Z git version 2.50.1
+2025-08-11T09:19:30.0853961Z ##[debug]0
+2025-08-11T09:19:30.0855252Z ##[debug]git version 2.50.1
+2025-08-11T09:19:30.0855896Z ##[debug]
+2025-08-11T09:19:30.0857002Z ##[debug]Set git useragent to: git/2.50.1 (github-actions-checkout)
+2025-08-11T09:19:30.0858909Z ::add-mask::***
+2025-08-11T09:19:30.0874211Z Temporarily overriding HOME='/home/runner/work/_temp/86c56c65-6a7c-46e7-b9d9-b0c27fb6c09a' before making global git config changes
+2025-08-11T09:19:30.0876088Z Adding repository directory to the temporary git global config as a safe directory
+2025-08-11T09:19:30.0879647Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/aitut_site/aitut_site
+2025-08-11T09:19:30.0915227Z ##[debug]0
+2025-08-11T09:19:30.0916004Z ##[debug]
+2025-08-11T09:19:30.0922699Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-08-11T09:19:30.0949510Z ##[debug]1
+2025-08-11T09:19:30.0950364Z ##[debug]
+2025-08-11T09:19:30.0955349Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-08-11T09:19:30.1181738Z ##[debug]0
+2025-08-11T09:19:30.1182925Z ##[debug]
+2025-08-11T09:19:30.1190919Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-08-11T09:19:30.1212845Z http.https://github.com/.extraheader
+2025-08-11T09:19:30.1219989Z ##[debug]0
+2025-08-11T09:19:30.1221530Z ##[debug]http.https://github.com/.extraheader
+2025-08-11T09:19:30.1222682Z ##[debug]
+2025-08-11T09:19:30.1227339Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-08-11T09:19:30.1252766Z ##[debug]0
+2025-08-11T09:19:30.1253510Z ##[debug]
+2025-08-11T09:19:30.1259047Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-08-11T09:19:30.1485149Z ##[debug]0
+2025-08-11T09:19:30.1486658Z ##[debug]
+2025-08-11T09:19:30.1488390Z ##[debug]Unsetting HOME override
+2025-08-11T09:19:30.1559831Z ##[debug]Node Action run completed with exit code 0
+2025-08-11T09:19:30.1563609Z ##[debug]Finishing: Post Checkout code
+2025-08-11T09:19:30.1617431Z ##[debug]Starting: Complete job
+2025-08-11T09:19:30.1620268Z Uploading runner diagnostic logs
+2025-08-11T09:19:30.1633494Z ##[debug]Starting diagnostic file upload.
+2025-08-11T09:19:30.1634108Z ##[debug]Setting up diagnostic log folders.
+2025-08-11T09:19:30.1636878Z ##[debug]Creating diagnostic log files folder.
+2025-08-11T09:19:30.1646867Z ##[debug]Copying 1 worker diagnostic logs.
+2025-08-11T09:19:30.1657382Z ##[debug]Copying 1 runner diagnostic logs.
+2025-08-11T09:19:30.1659018Z ##[debug]Zipping diagnostic files.
+2025-08-11T09:19:30.1746156Z ##[debug]Uploading diagnostic metadata file.
+2025-08-11T09:19:30.1778561Z ##[debug]Diagnostic file upload complete.
+2025-08-11T09:19:30.1779416Z Completed runner diagnostic log upload
+2025-08-11T09:19:30.1779937Z Cleaning up orphan processes
+2025-08-11T09:19:30.2085682Z ##[debug]Finishing: Complete job
+2025-08-11T09:19:30.2116446Z ##[debug]Finishing: deploy

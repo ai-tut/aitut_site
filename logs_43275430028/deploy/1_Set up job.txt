@@ -1,0 +1,67 @@
+﻿2025-08-11T09:19:17.6950797Z ##[debug]Starting: Set up job
+2025-08-11T09:19:17.6954095Z Current runner version: '2.327.1'
+2025-08-11T09:19:17.6989723Z ##[group]Runner Image Provisioner
+2025-08-11T09:19:17.6992076Z Hosted Compute Agent
+2025-08-11T09:19:17.6994027Z Version: 20250711.363
+2025-08-11T09:19:17.6995954Z Commit: 6785254374ce925a23743850c1cb91912ce5c14c
+2025-08-11T09:19:17.6998550Z Build Date: 2025-07-11T20:04:25Z
+2025-08-11T09:19:17.7000662Z ##[endgroup]
+2025-08-11T09:19:17.7002747Z ##[group]Operating System
+2025-08-11T09:19:17.7004728Z Ubuntu
+2025-08-11T09:19:17.7006622Z 24.04.2
+2025-08-11T09:19:17.7008724Z LTS
+2025-08-11T09:19:17.7010557Z ##[endgroup]
+2025-08-11T09:19:17.7012562Z ##[group]Runner Image
+2025-08-11T09:19:17.7014505Z Image: ubuntu-24.04
+2025-08-11T09:19:17.7016513Z Version: 20250804.2.0
+2025-08-11T09:19:17.7019797Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250804.2/images/ubuntu/Ubuntu2404-Readme.md
+2025-08-11T09:19:17.7023913Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250804.2
+2025-08-11T09:19:17.7026924Z ##[endgroup]
+2025-08-11T09:19:17.7030768Z ##[group]GITHUB_TOKEN Permissions
+2025-08-11T09:19:17.7034325Z Contents: read
+2025-08-11T09:19:17.7036268Z Metadata: read
+2025-08-11T09:19:17.7038800Z Packages: read
+2025-08-11T09:19:17.7040759Z ##[endgroup]
+2025-08-11T09:19:17.7046038Z Secret source: Actions
+2025-08-11T09:19:17.7049003Z ##[debug]Primary repository: ai-tut/aitut_site
+2025-08-11T09:19:17.7051454Z Prepare workflow directory
+2025-08-11T09:19:17.7158507Z ##[debug]Creating pipeline directory: '/home/runner/work/aitut_site'
+2025-08-11T09:19:17.7167279Z ##[debug]Creating workspace directory: '/home/runner/work/aitut_site/aitut_site'
+2025-08-11T09:19:17.7171627Z ##[debug]Update context data
+2025-08-11T09:19:17.7180752Z ##[debug]Evaluating job-level environment variables
+2025-08-11T09:19:17.7515356Z ##[debug]Evaluating job container
+2025-08-11T09:19:17.7521190Z ##[debug]Evaluating job service containers
+2025-08-11T09:19:17.7525686Z ##[debug]Evaluating job defaults
+2025-08-11T09:19:17.7564330Z Prepare all required actions
+2025-08-11T09:19:17.7624080Z Getting action download info
+2025-08-11T09:19:18.0373332Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-08-11T09:19:18.0375271Z Version: 4.2.2
+2025-08-11T09:19:18.0377025Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-08-11T09:19:18.0379433Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-08-11T09:19:18.0456225Z ##[endgroup]
+2025-08-11T09:19:18.2071149Z ##[debug]Copied action archive '/opt/actionarchivecache/actions_checkout/11bd71901bbe5b1630ceea73d27597364c9af683.tar.gz' to '/home/runner/work/_actions/_temp_301eef8f-920a-4420-8656-09540d576c8c/5ffa095e-6f27-4264-88b1-a0a0c3c75fa2.tar.gz'
+2025-08-11T09:19:18.2577600Z ##[debug]Unwrap 'actions-checkout-11bd719' to '/home/runner/work/_actions/actions/checkout/v4'
+2025-08-11T09:19:18.2711618Z ##[debug]Archive '/home/runner/work/_actions/_temp_301eef8f-920a-4420-8656-09540d576c8c/5ffa095e-6f27-4264-88b1-a0a0c3c75fa2.tar.gz' has been unzipped into '/home/runner/work/_actions/actions/checkout/v4'.
+2025-08-11T09:19:18.2814222Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-08-11T09:19:18.2815701Z Version: 4.4.0
+2025-08-11T09:19:18.2817089Z Digest: sha256:9427cefe82346e992fb5b949e3569b39d537ae41aa3086483b14eceebfc16bc1
+2025-08-11T09:19:18.2819057Z Source commit SHA: 49933ea5288caeca8642d1e84afbd3f7d6820020
+2025-08-11T09:19:18.2820443Z ##[endgroup]
+2025-08-11T09:19:18.2862823Z ##[debug]Copied action archive '/opt/actionarchivecache/actions_setup-node/49933ea5288caeca8642d1e84afbd3f7d6820020.tar.gz' to '/home/runner/work/_actions/_temp_ea41c121-bc38-4665-b178-1da15d37f62f/984f22f6-0b1e-4661-b9d2-1a62e48d47e7.tar.gz'
+2025-08-11T09:19:18.3448284Z ##[debug]Unwrap 'actions-setup-node-49933ea' to '/home/runner/work/_actions/actions/setup-node/v4'
+2025-08-11T09:19:18.3704011Z ##[debug]Archive '/home/runner/work/_actions/_temp_ea41c121-bc38-4665-b178-1da15d37f62f/984f22f6-0b1e-4661-b9d2-1a62e48d47e7.tar.gz' has been unzipped into '/home/runner/work/_actions/actions/setup-node/v4'.
+2025-08-11T09:19:18.3749881Z Download action repository 'appleboy/scp-action@master' (SHA:7f18bf0ec86d81d9fba5e2bdf3253b7b22a604ab)
+2025-08-11T09:19:18.5181135Z ##[debug]Download 'https://api.github.com/repos/appleboy/scp-action/tarball/7f18bf0ec86d81d9fba5e2bdf3253b7b22a604ab' to '/home/runner/work/_actions/_temp_0c0775ff-99bf-46db-87c8-e34098ff246d/d2cbaf14-d5a4-4af4-be10-8409a39c2b0f.tar.gz'
+2025-08-11T09:19:18.5268699Z ##[debug]Unwrap 'appleboy-scp-action-7f18bf0' to '/home/runner/work/_actions/appleboy/scp-action/master'
+2025-08-11T09:19:18.5291531Z ##[debug]Archive '/home/runner/work/_actions/_temp_0c0775ff-99bf-46db-87c8-e34098ff246d/d2cbaf14-d5a4-4af4-be10-8409a39c2b0f.tar.gz' has been unzipped into '/home/runner/work/_actions/appleboy/scp-action/master'.
+2025-08-11T09:19:18.5317161Z ##[debug]action.yml for action: '/home/runner/work/_actions/actions/checkout/v4/action.yml'.
+2025-08-11T09:19:18.5905416Z ##[debug]action.yml for action: '/home/runner/work/_actions/actions/setup-node/v4/action.yml'.
+2025-08-11T09:19:18.5974221Z ##[debug]action.yml for action: '/home/runner/work/_actions/appleboy/scp-action/master/action.yml'.
+2025-08-11T09:19:18.6363201Z ##[debug]Set step '__actions_checkout' display name to: 'Checkout code'
+2025-08-11T09:19:18.6367037Z ##[debug]Set step '__actions_setup-node' display name to: 'Set up Node.js'
+2025-08-11T09:19:18.6370045Z ##[debug]Set step '__run' display name to: 'Install dependencies'
+2025-08-11T09:19:18.6372826Z ##[debug]Set step '__run_2' display name to: 'Build project'
+2025-08-11T09:19:18.6375700Z ##[debug]Set step '__appleboy_scp-action' display name to: 'Deploy to server via SCP'
+2025-08-11T09:19:18.6377041Z Complete job name: deploy
+2025-08-11T09:19:18.6414994Z ##[debug]Collect running processes for tracking orphan processes.
+2025-08-11T09:19:18.6629137Z ##[debug]Finishing: Set up job

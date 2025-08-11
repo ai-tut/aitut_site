@@ -1,0 +1,58 @@
+﻿2025-08-11T09:19:29.9745727Z ##[debug]Evaluating condition for step: 'Post Checkout code'
+2025-08-11T09:19:29.9747952Z ##[debug]Evaluating: always()
+2025-08-11T09:19:29.9748658Z ##[debug]Evaluating always:
+2025-08-11T09:19:29.9749729Z ##[debug]=> true
+2025-08-11T09:19:29.9750423Z ##[debug]Result: true
+2025-08-11T09:19:29.9751223Z ##[debug]Starting: Post Checkout code
+2025-08-11T09:19:29.9803516Z ##[debug]Loading inputs
+2025-08-11T09:19:29.9804701Z ##[debug]Evaluating: github.repository
+2025-08-11T09:19:29.9805181Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.9805579Z ##[debug]..Evaluating github:
+2025-08-11T09:19:29.9806003Z ##[debug]..=> Object
+2025-08-11T09:19:29.9806386Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.9806799Z ##[debug]..=> 'repository'
+2025-08-11T09:19:29.9807222Z ##[debug]=> 'ai-tut/aitut_site'
+2025-08-11T09:19:29.9807638Z ##[debug]Result: 'ai-tut/aitut_site'
+2025-08-11T09:19:29.9809844Z ##[debug]Evaluating: github.token
+2025-08-11T09:19:29.9810316Z ##[debug]Evaluating Index:
+2025-08-11T09:19:29.9810737Z ##[debug]..Evaluating github:
+2025-08-11T09:19:29.9811203Z ##[debug]..=> Object
+2025-08-11T09:19:29.9811608Z ##[debug]..Evaluating String:
+2025-08-11T09:19:29.9812165Z ##[debug]..=> 'token'
+2025-08-11T09:19:29.9812880Z ##[debug]=> '***'
+2025-08-11T09:19:29.9813390Z ##[debug]Result: '***'
+2025-08-11T09:19:29.9824426Z ##[debug]Loading env
+2025-08-11T09:19:29.9830396Z Post job cleanup.
+2025-08-11T09:19:30.0779122Z ##[debug]Getting git version
+2025-08-11T09:19:30.0793537Z [command]/usr/bin/git version
+2025-08-11T09:19:30.0831802Z git version 2.50.1
+2025-08-11T09:19:30.0853953Z ##[debug]0
+2025-08-11T09:19:30.0855246Z ##[debug]git version 2.50.1
+2025-08-11T09:19:30.0855892Z ##[debug]
+2025-08-11T09:19:30.0856998Z ##[debug]Set git useragent to: git/2.50.1 (github-actions-checkout)
+2025-08-11T09:19:30.0858902Z ::add-mask::***
+2025-08-11T09:19:30.0874198Z Temporarily overriding HOME='/home/runner/work/_temp/86c56c65-6a7c-46e7-b9d9-b0c27fb6c09a' before making global git config changes
+2025-08-11T09:19:30.0876054Z Adding repository directory to the temporary git global config as a safe directory
+2025-08-11T09:19:30.0879639Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/aitut_site/aitut_site
+2025-08-11T09:19:30.0915217Z ##[debug]0
+2025-08-11T09:19:30.0916001Z ##[debug]
+2025-08-11T09:19:30.0922687Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-08-11T09:19:30.0949499Z ##[debug]1
+2025-08-11T09:19:30.0950360Z ##[debug]
+2025-08-11T09:19:30.0955340Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-08-11T09:19:30.1181727Z ##[debug]0
+2025-08-11T09:19:30.1182920Z ##[debug]
+2025-08-11T09:19:30.1190907Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-08-11T09:19:30.1212831Z http.https://github.com/.extraheader
+2025-08-11T09:19:30.1219975Z ##[debug]0
+2025-08-11T09:19:30.1221493Z ##[debug]http.https://github.com/.extraheader
+2025-08-11T09:19:30.1222675Z ##[debug]
+2025-08-11T09:19:30.1227326Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-08-11T09:19:30.1252755Z ##[debug]0
+2025-08-11T09:19:30.1253506Z ##[debug]
+2025-08-11T09:19:30.1259037Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-08-11T09:19:30.1485116Z ##[debug]0
+2025-08-11T09:19:30.1486648Z ##[debug]
+2025-08-11T09:19:30.1488378Z ##[debug]Unsetting HOME override
+2025-08-11T09:19:30.1559823Z ##[debug]Node Action run completed with exit code 0
+2025-08-11T09:19:30.1563591Z ##[debug]Finishing: Post Checkout code
