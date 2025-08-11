@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "../../lib/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { type CollectionConfig, type ModuleConfig } from "@/types";
+import { type CollectionConfig, type ModuleConfig } from "../../types";
 
 interface SidebarProps {
   collections: CollectionConfig[];

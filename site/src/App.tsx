@@ -266,6 +266,8 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
+import ErrorBoundary from './components/ErrorBoundary';
+
 function App() {
   // Hvis 'collections' er tom, er der noget galt med build-processen.
   if (!collections || collections.length === 0) {
@@ -282,23 +284,25 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-      <Suspense fallback={<div className="flex justify-center items-center h-screen">Indlæser...</div>}>
-        <Routes>
-          {/* Individuelle sider */}
-          <Route path="/:collectionId/:pageSlug" element={<LayoutWrapper><CollectionPageWrapper /></LayoutWrapper>} />
-          
-          {/* Samlings-TOC */}
-          <Route path="/:collectionId" element={<LayoutWrapper><CollectionTocWrapper /></LayoutWrapper>} />
-          
-          {/* Forside */}
-          <Route 
-            path="/" 
-            element={<LayoutWrapper><HomePage /></LayoutWrapper>}
-          />
-        </Routes>
-      </Suspense>
-    </BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <Suspense fallback={<div className="flex justify-center items-center h-screen">Indlæser...</div>}>
+          <Routes>
+            {/* Individuelle sider */}
+            <Route path="/:collectionId/:pageSlug" element={<LayoutWrapper><CollectionPageWrapper /></LayoutWrapper>} />
+            
+            {/* Samlings-TOC */}
+            <Route path="/:collectionId" element={<LayoutWrapper><CollectionTocWrapper /></LayoutWrapper>} />
+            
+            {/* Forside */}
+            <Route 
+              path="/" 
+              element={<LayoutWrapper><HomePage /></LayoutWrapper>}
+            />
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
+    </ErrorBoundary>
   );
 }
 

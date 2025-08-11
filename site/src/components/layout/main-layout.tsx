@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Header } from "./header";
 import { Sidebar } from "./sidebar";
-import { type CollectionConfig, type ModuleConfig, type ThemeConfig } from "@/types";
+import { type CollectionConfig, type ModuleConfig, type ThemeConfig } from "../../types";
 
 interface MainLayoutProps {
   children: React.ReactNode;
