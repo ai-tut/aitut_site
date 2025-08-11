@@ -22,13 +22,12 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to server via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Deploy to server via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: 195.242.130.13
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: /home/cffbkvcw/aitut.eu/
-          timeout: 60000
-          security: loose
+          local_path: './dist/*'
+          remote_path: '/home/cffbkvcw/aitut.eu/'
+          sftpArgs: '-o ConnectTimeout=60'
