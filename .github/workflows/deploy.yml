@@ -22,14 +22,8 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to server via SCP
-        uses: appleboy/scp-action@v0.1.7
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          host: 195.242.130.13
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 22
-          source: "dist/*"
-          target: "/home/cffbkvcw/aitut.eu/"
-          timeout: 60s
-          command_timeout: 60s
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
