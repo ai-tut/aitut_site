@@ -1,2 +1,6 @@
-# Git submodules configuration
-# This file defines the submodules for our orchestrated monorepo
+[submodule "content/lorem-ipsum-bog"]
+	path = content/lorem-ipsum-bog
+	url = ./content/lorem-ipsum-bog
+[submodule "content/bog-ux-2025"]
+	path = content/bog-ux-2025
+	url = ./content/bog-ux-2025
