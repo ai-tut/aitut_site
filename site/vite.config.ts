@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import mdx from '@mdx-js/rollup'
+import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -9,8 +11,8 @@ export default defineConfig({
     react(), 
     tsconfigPaths(),
     mdx({
-      remarkPlugins: [],
-      rehypePlugins: []
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [rehypeRaw]
     })
   ],
 })

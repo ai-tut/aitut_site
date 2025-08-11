@@ -105,7 +105,7 @@ export const MdxRenderer: React.FC<MdxRendererProps> = ({
   }
 
   return (
-    <div className={className}>
+    <div className={`${className} prose-table:border-collapse prose-table:border prose-table:border-gray-300 prose-th:border prose-th:border-gray-300 prose-th:bg-gray-100 prose-th:px-4 prose-th:py-2 prose-th:font-semibold prose-th:text-left prose-td:border prose-td:border-gray-300 prose-td:px-4 prose-td:py-2`}>
       <MdxComponent />
     </div>
   );
