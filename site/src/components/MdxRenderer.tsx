@@ -10,12 +10,12 @@ interface MdxRendererProps {
 const mdxModules = {
   'lorem-ipsum-bog': {
     // Baseret på toc.yml file-felter
-    '01-introduktion.mdx': () => import('../../../content/lorem-ipsum-bog/01-introduktion.mdx'),
-    '02-klassisk-lorem.mdx': () => import('../../../content/lorem-ipsum-bog/02-klassisk-lorem.mdx'),
-    '03-moderne-variationer.mdx': () => import('../../../content/lorem-ipsum-bog/03-moderne-variationer.mdx'),
-    '04-teknisk-lorem.mdx': () => import('../../../content/lorem-ipsum-bog/04-teknisk-lorem.mdx'),
-    '05-kreativ-lorem.mdx': () => import('../../../content/lorem-ipsum-bog/05-kreativ-lorem.mdx'),
-    '06-konklusion.mdx': () => import('../../../content/lorem-ipsum-bog/06-konklusion.mdx'),
+    '01-introduktion.mdx': () => import('@/content/lorem-ipsum-bog/01-introduktion.mdx'),
+    '02-klassisk-lorem.mdx': () => import('@/content/lorem-ipsum-bog/02-klassisk-lorem.mdx'),
+    '03-moderne-variationer.mdx': () => import('@/content/lorem-ipsum-bog/03-moderne-variationer.mdx'),
+    '04-teknisk-lorem.mdx': () => import('@/content/lorem-ipsum-bog/04-teknisk-lorem.mdx'),
+    '05-kreativ-lorem.mdx': () => import('@/content/lorem-ipsum-bog/05-kreativ-lorem.mdx'),
+    '06-konklusion.mdx': () => import('@/content/lorem-ipsum-bog/06-konklusion.mdx'),
   }
 };
 

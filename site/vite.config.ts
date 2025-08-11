@@ -4,6 +4,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 import mdx from '@mdx-js/rollup'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
+import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -15,4 +16,9 @@ export default defineConfig({
       rehypePlugins: [rehypeRaw]
     })
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '../..'),
+    },
+  },
 })

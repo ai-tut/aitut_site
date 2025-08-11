@@ -108,37 +108,37 @@ export const collections: CollectionConfig[] = [
         {
           "id": "introduktion",
           "title": "Introduktion til Lorem Ipsum",
-          "file": "01-introduktion.mdx",
+          "file": "01-introduktion.md",
           "description": "Historien bag den klassiske placeholder-tekst"
         },
         {
           "id": "klassisk-lorem",
           "title": "Klassisk Lorem Ipsum",
-          "file": "02-klassisk-lorem.mdx",
+          "file": "02-klassisk-lorem.md",
           "description": "Den originale Lorem Ipsum tekst fra Cicero"
         },
         {
           "id": "moderne-variationer",
           "title": "Moderne Variationer",
-          "file": "03-moderne-variationer.mdx",
+          "file": "03-moderne-variationer.md",
           "description": "Kreative og moderne tolkninger af Lorem Ipsum"
         },
         {
           "id": "teknisk-lorem",
           "title": "Teknisk Lorem Ipsum",
-          "file": "04-teknisk-lorem.mdx",
+          "file": "04-teknisk-lorem.md",
           "description": "Lorem Ipsum for tekniske dokumenter og kode"
         },
         {
           "id": "kreativ-lorem",
           "title": "Kreativ Lorem Ipsum",
-          "file": "05-kreativ-lorem.mdx",
+          "file": "05-kreativ-lorem.md",
           "description": "Kunstneriske og kreative variationer"
         },
         {
           "id": "konklusion",
           "title": "Konklusion",
-          "file": "06-konklusion.mdx",
+          "file": "06-konklusion.md",
           "description": "Afsluttende tanker om Lorem Ipsum's betydning"
         }
       ],
@@ -161,37 +161,37 @@ export const collections: CollectionConfig[] = [
       {
         "slug": "introduktion",
         "title": "Introduktion til Lorem Ipsum",
-        "path": "01-introduktion.mdx",
+        "path": "01-introduktion.md",
         "description": "Historien bag den klassiske placeholder-tekst"
       },
       {
         "slug": "klassisk-lorem",
         "title": "Klassisk Lorem Ipsum",
-        "path": "02-klassisk-lorem.mdx",
+        "path": "02-klassisk-lorem.md",
         "description": "Den originale Lorem Ipsum tekst fra Cicero"
       },
       {
         "slug": "moderne-variationer",
         "title": "Moderne Variationer",
-        "path": "03-moderne-variationer.mdx",
+        "path": "03-moderne-variationer.md",
         "description": "Kreative og moderne tolkninger af Lorem Ipsum"
       },
       {
         "slug": "teknisk-lorem",
         "title": "Teknisk Lorem Ipsum",
-        "path": "04-teknisk-lorem.mdx",
+        "path": "04-teknisk-lorem.md",
         "description": "Lorem Ipsum for tekniske dokumenter og kode"
       },
       {
         "slug": "kreativ-lorem",
         "title": "Kreativ Lorem Ipsum",
-        "path": "05-kreativ-lorem.mdx",
+        "path": "05-kreativ-lorem.md",
         "description": "Kunstneriske og kreative variationer"
       },
       {
         "slug": "konklusion",
         "title": "Konklusion",
-        "path": "06-konklusion.mdx",
+        "path": "06-konklusion.md",
         "description": "Afsluttende tanker om Lorem Ipsum's betydning"
       }
     ]
@@ -274,37 +274,37 @@ export const fallbackConfig = {
         {
           "id": "introduktion",
           "title": "Introduktion til Lorem Ipsum",
-          "file": "01-introduktion.mdx",
+          "file": "01-introduktion.md",
           "description": "Historien bag den klassiske placeholder-tekst"
         },
         {
           "id": "klassisk-lorem",
           "title": "Klassisk Lorem Ipsum",
-          "file": "02-klassisk-lorem.mdx",
+          "file": "02-klassisk-lorem.md",
           "description": "Den originale Lorem Ipsum tekst fra Cicero"
         },
         {
           "id": "moderne-variationer",
           "title": "Moderne Variationer",
-          "file": "03-moderne-variationer.mdx",
+          "file": "03-moderne-variationer.md",
           "description": "Kreative og moderne tolkninger af Lorem Ipsum"
         },
         {
           "id": "teknisk-lorem",
           "title": "Teknisk Lorem Ipsum",
-          "file": "04-teknisk-lorem.mdx",
+          "file": "04-teknisk-lorem.md",
           "description": "Lorem Ipsum for tekniske dokumenter og kode"
         },
         {
           "id": "kreativ-lorem",
           "title": "Kreativ Lorem Ipsum",
-          "file": "05-kreativ-lorem.mdx",
+          "file": "05-kreativ-lorem.md",
           "description": "Kunstneriske og kreative variationer"
         },
         {
           "id": "konklusion",
           "title": "Konklusion",
-          "file": "06-konklusion.mdx",
+          "file": "06-konklusion.md",
           "description": "Afsluttende tanker om Lorem Ipsum's betydning"
         }
       ],
@@ -327,37 +327,37 @@ export const fallbackConfig = {
       {
         "slug": "introduktion",
         "title": "Introduktion til Lorem Ipsum",
-        "path": "01-introduktion.mdx",
+        "path": "01-introduktion.md",
         "description": "Historien bag den klassiske placeholder-tekst"
       },
       {
         "slug": "klassisk-lorem",
         "title": "Klassisk Lorem Ipsum",
-        "path": "02-klassisk-lorem.mdx",
+        "path": "02-klassisk-lorem.md",
         "description": "Den originale Lorem Ipsum tekst fra Cicero"
       },
       {
         "slug": "moderne-variationer",
         "title": "Moderne Variationer",
-        "path": "03-moderne-variationer.mdx",
+        "path": "03-moderne-variationer.md",
         "description": "Kreative og moderne tolkninger af Lorem Ipsum"
       },
       {
         "slug": "teknisk-lorem",
         "title": "Teknisk Lorem Ipsum",
-        "path": "04-teknisk-lorem.mdx",
+        "path": "04-teknisk-lorem.md",
         "description": "Lorem Ipsum for tekniske dokumenter og kode"
       },
       {
         "slug": "kreativ-lorem",
         "title": "Kreativ Lorem Ipsum",
-        "path": "05-kreativ-lorem.mdx",
+        "path": "05-kreativ-lorem.md",
         "description": "Kunstneriske og kreative variationer"
       },
       {
         "slug": "konklusion",
         "title": "Konklusion",
-        "path": "06-konklusion.mdx",
+        "path": "06-konklusion.md",
         "description": "Afsluttende tanker om Lorem Ipsum's betydning"
       }
     ]
