@@ -1,91 +1,100 @@
-# MFP Jamstack Orkestrator
+# Monorepo Website Project
 
-Dette projekt implementerer det **Orkestrerede Monorepo** arkitektur som beskrevet i `/docs/oplæg.md`.
+This project is a modern web application built using a **monorepo architecture** managed with `npm workspaces`. The core idea is to separate the main website application from its content, allowing for independent development while maintaining a unified build and deployment process.
 
-## Arkitektur Oversigt
+## Core Concepts
 
-Vi bygger ikke én monolitisk applikation. Vi bygger en **orkestrator** (core-site), der dirigerer et **orkester** af pakker (/packages) og spiller efter en **partitur** af indhold (/content).
+*   **Orchestrator (`site`):** A React/Vite application that acts as the central hub. It fetches, orchestrates, and renders content.
+*   **Content (`content/*`):** A collection of content packages, managed as Git submodules. This allows content to have its own version history, separate from the application code.
+*   **Workspaces:** The `npm workspaces` feature is the glue that holds the project together. It links the `site` and `content` packages, enabling seamless local development and dependency management.
 
-### Struktur
+## Project Structure
+
+The project is organized as follows:
 
 ```
-/main-project-repo/
-├── .git/
-├── .gitmodules          # Definerer vores submoduler
+/
+├── .gitmodules          # Defines the Git submodules for content
 │
-├── content/             # Mappe til content-submoduler
-│   ├── registry.json    # Registrering af tilgængelige samlinger
-│   └── bog-ux-2025/     # GIT SUBMODULE (eget repo)
+├── content/             # Houses the content packages (as submodules)
+│   ├── bog-ux-2025/     # Example: A book project (Git submodule)
+│   └── lorem-ipsum-bog/ # Example: Another book project (Git submodule)
 │
-├── packages/            # Mappe til package-submoduler
-│   ├── registry.json    # Registrering af tilgængelige moduler
-│   └── ui-kit/          # GIT SUBMODULE (eget repo med egen package.json)
-│
-├── site/                # Vores core React/Vite app (Orkestratoren)
+├── site/                # The main React/Vite application (the "Orchestrator")
 │   ├── src/
-│   │   ├── App.tsx
-│   │   └── config/
-│   │       └── runtime.ts  # Auto-genereret konfiguration
-│   └── ...
+│   └── package.json     # Dependencies for the site
 │
-└── scripts/
-    └── pre-build.js     # Pre-build script der håndterer submoduler
+├── package.json         # Root package.json defining the workspaces
+└── ...
 ```
 
-## Kom i Gang
+## Getting Started
+
+### Prerequisites
+
+*   Node.js (LTS version)
+*   npm (version 7 or higher, for workspace support)
 
 ### 1. Installation
+
+Clone the repository and install all dependencies from the root directory. The `--recurse-submodules` flag is important to initialize the content packages.
+
 ```bash
+git clone --recurse-submodules <repository_url>
+cd <repository_name>
 npm install
 ```
 
-### 2. Udvikling
+The `npm install` command will automatically:
+1.  Install dependencies for the root project.
+2.  Install dependencies for the `site` workspace.
+3.  Create symbolic links between the workspaces, so `site` can import code and content from the `content` packages.
+
+### 2. Development
+
+To start the development server for the `site` application, run the following command from the root directory:
+
 ```bash
 npm run dev
 ```
 
-Pre-build scriptet kører automatisk og:
-- Opdaterer git submoduler
-- Installerer afhængigheder i submoduler
-- Genererer runtime konfiguration
+This will start the Vite development server, and you can view your application in the browser.
 
-### 3. Build til produktion
+### 3. Building for Production
+
+To create a production-ready build of the website, run:
+
 ```bash
 npm run build
 ```
 
-## Tilføjelse af Nyt Indhold
+This command will build the `site` application and place the output in the `site/dist` directory.
 
-### Tilføj en ny content samling:
-1. Opret et nyt Git-repository for indholdet
-2. Tilføj som submodule: `git submodule add <repo_url> content/<samling_navn>`
-3. Opdater `content/registry.json` med den nye samlings information
-4. Commit ændringerne
+## How It Works
 
-### Tilføj et nyt UI-modul:
-1. Opret et nyt Git-repository for modulet
-2. Tilføj som submodule: `git submodule add <repo_url> packages/<modul_navn>`
-3. Opdater `packages/registry.json` med den nye pakkes information
-4. Commit ændringerne
+### Workspaces & Submodules
 
-## MFP Principper
+This project uses a hybrid approach:
 
-Dette projekt følger **MFP (Modular Frontend & Headless APIs)** principperne:
+1.  **`npm workspaces`** are used for **dependency management and local linking**. This is what allows the `site` to "see" the content packages as if they were regular npm dependencies.
+2.  **Git Submodules** are used for **version control**. This keeps the content's Git history separate from the main application's history, which is ideal for collaboration between developers and content creators.
 
-- **Separation of Concerns**: Klar adskillelse mellem frontend og backend
-- **Single Responsibility**: Hver komponent/service har ét ansvar
-- **KISS**: Hold det simpelt og vedligeholdelsesvenligt
+### Adding New Content
 
-## Scripts
+To add a new content package (e.g., a new book):
 
-- `npm run dev` - Start udviklings-server
-- `npm run build` - Byg til produktion
-- `npm run preview` - Preview production build
-- `npm run lint` - Kør linting
+1.  Create a new Git repository for your content.
+2.  Add it as a submodule in the `content/` directory:
+    ```bash
+    git submodule add <your_content_repo_url> content/<new_content_name>
+    ```
+3.  **Important:** Add the new package to the `workspaces` array in the root `package.json` if it's not already covered by the `content/*` glob pattern.
+4.  Run `npm install` again from the root to link the new package.
 
-## Teknologier
+## Key Technologies
 
-- **Frontend**: React, TypeScript, Vite, Tailwind CSS
-- **Routing**: React Router
-- **Build**: Vite med custom pre-build script
-- **Styling**: Tailwind CSS med shadcn/ui komponenter
+*   **Frontend:** React, TypeScript
+*   **Build Tool:** Vite
+*   **Styling:** Tailwind CSS
+*   **UI Components:** shadcn/ui
+*   **Monorepo Management:** npm Workspaces
