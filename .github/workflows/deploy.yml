@@ -29,7 +29,6 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT || 22 }}
           source: "dist/*"
-          target: "/aitut.eu"
+          target: /aitut.eu/
           strip_components: 1
