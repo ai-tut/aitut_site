@@ -1,0 +1,14 @@
+{
+  "collections": [
+    {
+      "id": "web-ux-2025",
+      "path": "./bog-ux-2025",
+      "toc": "toc.yml"
+    },
+    {
+      "id": "lorem-ipsum-bog",
+      "path": "./lorem-ipsum-bog",
+      "toc": "toc.yml"
+    }
+  ]
+}

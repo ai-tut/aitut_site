@@ -1,69 +1,91 @@
-# React + TypeScript + Vite
+# MFP Jamstack Orkestrator
 
-1 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dette projekt implementerer det **Orkestrerede Monorepo** arkitektur som beskrevet i `/docs/oplæg.md`.
 
-Currently, two official plugins are available:
+## Arkitektur Oversigt
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Vi bygger ikke én monolitisk applikation. Vi bygger en **orkestrator** (core-site), der dirigerer et **orkester** af pakker (/packages) og spiller efter en **partitur** af indhold (/content).
 
-## Expanding the ESLint configuration
+### Struktur
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+/main-project-repo/
+├── .git/
+├── .gitmodules          # Definerer vores submoduler
+│
+├── content/             # Mappe til content-submoduler
+│   ├── registry.json    # Registrering af tilgængelige samlinger
+│   └── bog-ux-2025/     # GIT SUBMODULE (eget repo)
+│
+├── packages/            # Mappe til package-submoduler
+│   ├── registry.json    # Registrering af tilgængelige moduler
+│   └── ui-kit/          # GIT SUBMODULE (eget repo med egen package.json)
+│
+├── site/                # Vores core React/Vite app (Orkestratoren)
+│   ├── src/
+│   │   ├── App.tsx
+│   │   └── config/
+│   │       └── runtime.ts  # Auto-genereret konfiguration
+│   └── ...
+│
+└── scripts/
+    └── pre-build.js     # Pre-build script der håndterer submoduler
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Kom i Gang
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Installation
+```bash
+npm install
 ```
+
+### 2. Udvikling
+```bash
+npm run dev
+```
+
+Pre-build scriptet kører automatisk og:
+- Opdaterer git submoduler
+- Installerer afhængigheder i submoduler
+- Genererer runtime konfiguration
+
+### 3. Build til produktion
+```bash
+npm run build
+```
+
+## Tilføjelse af Nyt Indhold
+
+### Tilføj en ny content samling:
+1. Opret et nyt Git-repository for indholdet
+2. Tilføj som submodule: `git submodule add <repo_url> content/<samling_navn>`
+3. Opdater `content/registry.json` med den nye samlings information
+4. Commit ændringerne
+
+### Tilføj et nyt UI-modul:
+1. Opret et nyt Git-repository for modulet
+2. Tilføj som submodule: `git submodule add <repo_url> packages/<modul_navn>`
+3. Opdater `packages/registry.json` med den nye pakkes information
+4. Commit ændringerne
+
+## MFP Principper
+
+Dette projekt følger **MFP (Modular Frontend & Headless APIs)** principperne:
+
+- **Separation of Concerns**: Klar adskillelse mellem frontend og backend
+- **Single Responsibility**: Hver komponent/service har ét ansvar
+- **KISS**: Hold det simpelt og vedligeholdelsesvenligt
+
+## Scripts
+
+- `npm run dev` - Start udviklings-server
+- `npm run build` - Byg til produktion
+- `npm run preview` - Preview production build
+- `npm run lint` - Kør linting
+
+## Teknologier
+
+- **Frontend**: React, TypeScript, Vite, Tailwind CSS
+- **Routing**: React Router
+- **Build**: Vite med custom pre-build script
+- **Styling**: Tailwind CSS med shadcn/ui komponenter

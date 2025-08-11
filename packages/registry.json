@@ -1,0 +1,9 @@
+{
+  "modules": [
+    {
+      "name": "ui-kit",
+      "path": "./ui-kit",
+      "entry": "src/index.ts"
+    }
+  ]
+}
